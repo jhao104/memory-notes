@@ -1,2 +1,2 @@
 #Good memory as bad written
-* 一些笔记，方便需要时查阅
+* 一些个人笔记，方便需要时查阅

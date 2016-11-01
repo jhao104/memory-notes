@@ -203,3 +203,84 @@ def __call__(self, x, y):
     self.x, self.y = x, y
 ```
 
+## 上下文管理
+
+　　*with*声明是从Python2.5开始引进的关键词。你应该遇过这样子的代码:
+```
+with open('foo.txt') as bar:
+    # do something with bar
+```
+
+　　在with声明的代码段中，我们可以做一些对象的开始操作和退出操作,还能对异常进行处理。这需要实现两个魔术方法: *\__enter__* 和 *\__exit__*。
+
+* *\__enter__(self)*:
+
+　　定义了当使用with语句的时候，会话管理器在块被初始创建时要产生的行为。请注意，*\__enter__*的返回值与with语句的目标或者as后的名字绑定。
+
+* *\__exit__(self, exception_type, exception_value, traceback)*:
+
+　　定义了当一个代码块被执行或者终止后，会话管理器应该做什么。它可以被用来处理异常、执行清理工作或做一些代码块执行完毕之后的日常工作。如果代码块执行成功，exception_type，exception_value，和traceback将会为None。否则，你可以选择处理这个异常或者是直接交给用户处理。如果你想处理这个异常的话，请确保*\__exit__*在所有语句结束之后返回True。如果你想让异常被会话管理器处理的话，那么就让其产生该异常。
+
+## 创建对象描述器
+
+　　描述器是通过获取、设置以及删除的时候被访问的类。当然也可以改变其它的对象。描述器并不是独立的。相反，它意味着被一个所有者类持有。当创建面向对象的数据库或者类，里面含有相互依赖的属相时，描述器将会非常有用。一种典型的使用方法是用不同的单位表示同一个数值，或者表示某个数据的附加属性。
+　　为了成为一个描述器，一个类必须至少有*\__get__*，*\__set__*，*\__delete__*方法被实现：
+
+* *\__get__(self, instance, owner)*:
+
+    定义了当描述器的值被取得的时候的行为。instance是拥有该描述器对象的一个实例。owner是拥有者本身
+    
+* *\__set__(self, instance, value)*:
+
+    定义了当描述器的值被改变的时候的行为。instance是拥有该描述器类的一个实例。value是要设置的值。
+
+* *\__delete__(self, instance)*:
+
+    定义了当描述器的值被删除的时候的行为。instance是拥有该描述器对象的一个实例。
+
+　　下面是一个描述器的实例：单位转换。
+```
+# -*- coding: UTF-8 -*-
+class Meter(object):
+    """
+    对于单位"米"的描述器
+    """
+
+    def __init__(self, value=0.0):
+        self.value = float(value)
+
+    def __get__(self, instance, owner):
+        return self.value
+
+    def __set__(self, instance, value):
+        self.value = float(value)
+
+
+class Foot(object):
+    """
+    对于单位"英尺"的描述器
+    """
+
+    def __get__(self, instance, owner):
+        return instance.meter * 3.2808
+
+    def __set__(self, instance, value):
+        instance.meter = float(value) / 3.2808
+
+
+class Distance(object):
+    """
+    用米和英寸来表示两个描述器之间的距离
+    """
+    meter = Meter(10)
+    foot = Foot()
+```
+　　使用时：
+```
+>>>d = Distance()
+>>>print d.foot
+>>>print d.meter
+32.808
+10.0
+```
+

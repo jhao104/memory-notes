@@ -311,3 +311,37 @@ class Distance(object):
 |\__ge__(self,other)|定义大于等于符号的行为，>=|
 
 ### 数值计算的魔术方法
+
+单目运算符和函数
+
+| Magic method  | explain|
+|---|---|
+|\__pos__(self)   |实现一个取正数的操作|
+|\__neg__(self)|实现一个取负数的操作|
+|\__abs__(self)|实现一个内建的abs()函数的行为|
+|__invert__(self)|实现一个取反操作符（～操作符）的行为|
+|\__round__(self, n)|实现一个内建的round（）函数的行为|
+|\__floor__(self)|实现math.floor()的函数行为|
+|\__ceil__(self)|实现math.ceil()的函数行为|
+|\__trunc__(self)|实现math.trunc()的函数行为|
+
+双目运算符或函数
+
+| Magic method  | explain|
+|---|---|
+|\__add__(self, other)   |实现一个加法|
+|\__sub__(self, other)|实现一个减法|
+|\__mul__(self, other)|实现一个乘法|
+|\__floordiv__(self, other)|实现一个“//”操作符产生的整除操作（）|
+|\__div__(self, other)|实现一个“/”操作符代表的除法操作|
+|\__truediv__(self, other)|实现真实除法|
+|\__mod__(self, other)|实现一个“%”操作符代表的取模操作|
+|\__divmod__(self, other)|实现一个内建函数divmod（）|
+|\__pow__|实现一个指数操作(“\*\*”操作符）的行为|
+|\__lshift__(self, other)|实现一个位左移操作（<<）的功能|
+|\__rshift__(self, other)|实现一个位右移操作（>>）的功能|
+|\__and__(self, other)|实现一个按位进行与操作（&）的行为|
+|\__or__(self, other) |实现一个按位进行或操作（\|）的行为|
+|\__xor__(self, other)|__xor__(self, other)|
+
+

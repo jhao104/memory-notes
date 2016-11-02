@@ -344,4 +344,36 @@ class Distance(object):
 |\__or__(self, other) |实现一个按位进行或操作（\|）的行为|
 |\__xor__(self, other)|__xor__(self, other)|
 
+增量运算
+
+|  Magic method  | explain|
+|---|---|
+|\__iadd__(self, other)|加法赋值|
+|\__isub__(self, other)|减法赋值|
+|\__imul__(self, other)|乘法赋值|
+|\__ifloordiv__(self, other)|整除赋值，地板除，相当于 //= 运算符|
+|\__idiv__(self, other)|除法赋值，相当于 /= 运算符|
+|\__itruediv__(self, other)|真除赋值|
+|\__imod_(self, other)|模赋值，相当于 %= 运算符|
+|\__ipow__|乘方赋值，相当于 \*\*= 运算符|
+|\__ilshift__(self, other)|左移赋值，相当于 <<= 运算符|
+|\__irshift__(self, other)|左移赋值，相当于 >>= 运算符|
+|\__iand__(self, other)|与赋值，相当于 &= 运算符|
+|\__ior__(self, other)|或赋值，相当于 \|= 运算符|
+|\__ixor__(self, other)|异或运算符，相当于 ^= 运算符|
+
+类型转换
+
+|  Magic method  |explain|
+|---|---|
+|\__int__(self)|转换成整型|
+|\__long__(self)|转换成长整型|
+|\__float__(self)|转换成浮点型|
+|\__complex__(self)|转换成 复数型|
+|\__oct__(self)|转换成八进制|
+|\__hex__(self)|转换成十六进制|
+|\__index__(self)|如果你定义了一个可能被用来做切片操作的数值型，你就应该定义__index__|
+|\__trunc__(self)|当 math.trunc(self) 使用时被调用*.\__trunc__*返回自身类型的整型截取|
+|\__coerce__(self, other)|执行混合类型的运算|
+
 

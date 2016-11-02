@@ -309,3 +309,5 @@ class Distance(object):
 |\__gt__(self,other)|定义大于符号的行为，>|
 |\__le__(self,other)|定义小于等于符号的行为，<=|
 |\__ge__(self,other)|定义大于等于符号的行为，>=|
+
+### 数值计算的魔术方法

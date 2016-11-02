@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html class=" js csstransitions">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Black &amp; White</title>
+
+    <!-- meta -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- css -->
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/custom.css">
+    <link rel="stylesheet" href="/static/css/markdown.css">
+
+    <!-- js -->
+</head>
+
+<div class="container">
+    {% block header %}
+    {% endblock %}
+</div>
+
+<div class="content-body">
+    <div class="container">
+        <div class="row">
+            {% block content %}
+            {% endblock %}
+            {% block sidebar %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+
+{% block footer %}
+{% endblock %}
+
+</body>
+</html>

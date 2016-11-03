@@ -1,4 +1,5 @@
 {% extends "article/home.html" %}
+{% load custom_markdown %}
 {% block content %}
     <main class="col-md-8" id="article">
         {% for post in post_list %}
@@ -24,7 +25,7 @@
                     </div>
                 </header>
                 <div class="entry-content clearfix">
-                    <p>{{ post.content }}</p>
+                    <p>{{ post.content|custom_markdown }}</p>
                     <div class="read-more cl-effect-14">
                         <a href="#" class="more-link">Continue
                             reading <span class="meta-nav">→</span></a>

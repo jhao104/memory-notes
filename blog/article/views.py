@@ -7,7 +7,7 @@ from article.models import Article
 # Create your views here.
 def home(request):
     post_list = Article.objects.all()  # 获取全部文章
-    return render(request, 'article/base.html', {"post_list": post_list})
+    return render(request, 'article/articles.html', {"post_list": post_list})
 
 
 def detail(request, id):

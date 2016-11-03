@@ -168,7 +168,6 @@
 							</div>
 						</article>
             </main>
-
             <aside class="col-md-4" id="aside" style="position: fixed; right: 0">
                 <div class="widget widget-recent-posts">
                     <h3 class="widget-title">Recent Posts</h3>
@@ -231,34 +230,5 @@
         </div>
     </div>
 </footer>
-
-{#<script>#}
-{#    var get_id = function(id) {#}
-{#        return document.getElementById(id);#}
-{#    }#}
-{##}
-{#    var add_event = function (obj, event, fun) {#}
-{#        if(obj.addEventListener){#}
-{#            obj.addEventListener(event, fun, false);#}
-{#        }#}
-{#        else if(obj.attachEvent){#}
-{#            obj.attachEvent("on"+event,fun)#}
-{#        }#}
-{#    }#}
-{##}
-{#    var in_side = get_id("aside");#}
-{#    add_event(window, "scroll", function(){#}
-{#        var scroll_height = document.body.scrollTop;#}
-{#      console.log(scroll_height);#}
-{#        var content_height = get_id("article").offsetHeight - in_side.offsetHeight;#}
-{#      // console.log(content_height);#}
-{#        if(scroll_height > 40 && scroll_height < content_height + 40){#}
-{#            in_side.style.position = "absolute";#}
-{#            in_side.style.right = "0px";#}
-{#            in_side.style.top = scroll_height - 40 + "px";#}
-{#        }#}
-{#    })#}
-{##}
-{#</script>#}
 </body>
 </html>

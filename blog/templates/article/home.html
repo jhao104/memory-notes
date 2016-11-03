@@ -17,23 +17,22 @@
 </head>
 
 <div class="container">
-    {% block header %}
-    {% endblock %}
+    {% include "article/header.html" %}
 </div>
 
 <div class="content-body">
     <div class="container">
-        <div class="row">
+        <div class="article">
             {% block content %}
             {% endblock %}
-            {% block sidebar %}
-            {% endblock %}
+        </div>
+        <div class="menu">
+            {% include "article/menu.html" %}
         </div>
     </div>
 </div>
 
-{% block footer %}
-{% endblock %}
+{% include "article/footer.html" %}
 
 </body>
 </html>

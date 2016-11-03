@@ -92,9 +92,9 @@ leave A
 ```
 supder和父类没有关联，因此执行顺序是A —> B—>—>Base
 
-执行过程相当于：初始化childC()时，先会去调用childA的构造方法中的 super(childA, self).\__init__()， super(childA, self)返回当前类的继承顺序中childA后的一个类childB；然后再执行childB().\__init()__,这样顺序执行下去。
+执行过程相当于：初始化childC()时，先会去调用childA的构造方法中的 super(childA, self).\__init\__()， super(childA, self)返回当前类的继承顺序中childA后的一个类childB；然后再执行childB().\__init()\__,这样顺序执行下去。
 
-在多重继承里，如果把childA()中的 super(childA, self).\__init__() 换成Base.\__init__(self)，在执行时，继承childA后就会直接跳到Base类里，而略过了childB：
+在多重继承里，如果把childA()中的 super(childA, self).\__init\__() 换成Base.\__init\__(self)，在执行时，继承childA后就会直接跳到Base类里，而略过了childB：
 ```
 enter A 
 Base create

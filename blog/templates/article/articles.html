@@ -25,9 +25,9 @@
                     </div>
                 </header>
                 <div class="entry-content clearfix">
-                    <p>{{ post.content|custom_markdown }}</p>
+                    <p>&nbsp;&nbsp;{{ post.content |truncatewords_html:20 }}</p>
                     <div class="read-more cl-effect-14">
-                        <a href="#" class="more-link">Continue
+                        <a href="{% url "article:detail" id=post.id %}" class="more-link">Continue
                             reading <span class="meta-nav">→</span></a>
                     </div>
                 </div>

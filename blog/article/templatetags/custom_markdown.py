@@ -25,7 +25,16 @@ register = template.Library()
 @stringfilter
 def custom_markdown(value):
     return mark_safe(
-        markdown.markdown(value, extensions=['markdown.extensions.fenced_code',
-                                             'markdown.extensions.codehilite',
-                                             'markdown.extensions.tables'],
-                          safe_mode=True, enable_attributes=False))
+            markdown.markdown(value, extensions=['markdown.extensions.fenced_code',
+                                                 'markdown.extensions.codehilite',
+                                                 'markdown.extensions.tables'],
+                              safe_mode=True, enable_attributes=False))
+
+
+@register.filter(is_safe=True)
+@stringfilter
+def abstract_content(value):
+    import re
+    value = ' '.join(re.findall(u'\s*(.*?)\s*```.*?```', value, re.DOTALL))  # 去掉markdown代码块
+    value = re.sub(r'##|###|\s*', '', value)
+    return value

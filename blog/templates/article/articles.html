@@ -25,7 +25,7 @@
                     </div>
                 </header>
                 <div class="entry-content clearfix">
-                    <p>&nbsp;&nbsp;{{ post.content |truncatewords_html:20 }}</p>
+                    <p>&nbsp;&nbsp;{{ post.content |abstract_content |truncatewords_html:20}}</p>
                     <div class="read-more cl-effect-14">
                         <a href="{% url "article:detail" id=post.id %}" class="more-link">Continue
                             reading <span class="meta-nav">→</span></a>

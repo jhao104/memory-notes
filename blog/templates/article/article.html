@@ -1,12 +1,12 @@
 {% extends "article/home.html" %}
 {% load custom_markdown %}
 {% block content %}
-    <main class="col-md-10" id="article">
-        {% for post in post_list %}
+    <div class="col-md-10" id="article">
+    <div class="markdown-body">
             <article class="post post">
                 <header class="entry-header">
                     <h1 class="entry-title">
-                        <a href="{% url "article:detail" id=post.id %}">{{ post.title }}</a>
+                        {{ post.title }}
                     </h1>
                     <div class="entry-meta">
                             <span class="post-category"><a
@@ -25,15 +25,11 @@
                     </div>
                 </header>
                 <div class="entry-content clearfix">
-                    <p>&nbsp;&nbsp;{{ post.content |abstract_content |truncatewords_html:25}}</p>
-                    <div class="read-more cl-effect-14">
-                        <a href="{% url "article:detail" id=post.id %}" class="more-link">Continue
-                            reading <span class="meta-nav">→</span></a>
-                    </div>
+                    <p>&nbsp;&nbsp;{{ post.content | custom_markdown}}</p>
                 </div>
             </article>
-        {% endfor %}
-    </main>
+    </div>
+    </div>
 {% endblock %}
 
 {% block menu %}

@@ -239,6 +239,8 @@
 .markdown-body h6 {
   margin-top: 0;
   margin-bottom: 0;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid #eee
 }
 
 .markdown-body h1 {

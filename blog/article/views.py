@@ -11,6 +11,5 @@ def home(request):
 
 
 def detail(request, id):
-    # post = get_object_or_404(Article, pk=id)
-    # return render(request, 'article/base.html', {"post": post})
-    return render_to_response('article/articles.html')
+    post = get_object_or_404(Article, pk=id)
+    return render(request, 'article/article.html', {"post": post})

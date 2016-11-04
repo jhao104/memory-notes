@@ -173,6 +173,7 @@ figure {
 .post {
 	background: #fff;
 	padding: 30px 30px 0;
+	border-bottom: 1px dotted #e1e1e1;
 }
 
 .entry-title {

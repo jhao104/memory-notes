@@ -2,7 +2,7 @@
 {% load custom_markdown %}
 {% block content %}
     <div class="col-md-10" id="article">
-    <div class="markdown-body">
+        <div class="markdown-body">
             <article class="post post">
                 <header class="entry-header">
                     <h1 class="entry-title">
@@ -24,15 +24,21 @@
                                 view</a></span>
                     </div>
                 </header>
-                <div class="entry-content clearfix">
-                    <p>&nbsp;&nbsp;{{ post.content | custom_markdown}}</p>
+                <div class="post-content">
+                    <div class="BlogAnchor">
+                        <p>
+                            <b id="AnchorContentToggle" title="收起" style="cursor:pointer;">目录[-]</b>
+                        </p>
+                        <div class="AnchorContent" id="AnchorContent"></div>
+                    </div>
+                    <p>&nbsp;&nbsp;{{ post.content | custom_markdown }}</p>
                 </div>
             </article>
-    </div>
-    {% include "article/duoshuo.html" %}
+        </div>
+        {% include "article/duoshuo.html" %}
     </div>
 {% endblock %}
 
 {% block menu %}
-{% include "article/menu.html" %}
+    {% include "article/menu.html" %}
 {% endblock %}

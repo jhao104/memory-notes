@@ -9,6 +9,8 @@ class Article(models.Model):
     category = models.CharField(max_length=50, blank=True)  # 博客标签
     date_time = models.DateField(auto_now_add=True)  # 博客日期
     content = models.TextField(blank=True, null=True)  # 博客正文
+    view = models.BigIntegerField(default=0)  # pv
+    comment = models.BigIntegerField(default=0)  # 评论
 
     def __unicode__(self):
         return self.title

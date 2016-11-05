@@ -770,3 +770,39 @@ figure {
 		min-height: 34px;
 	}
 }
+
+
+.BlogAnchor {
+    background: #f4f7f9;
+    padding: 10px;
+    line-height: 180%;
+}
+.BlogAnchor p {
+    font-size: 18px;
+    color: #15a230;
+    margin-bottom: 0.3em;
+}
+.BlogAnchor .AnchorContent {
+    padding: 5px 0px;
+}
+.BlogAnchor li{
+    text-indent: 20px;
+    font-size: 14px;
+}
+#AnchorContentToggle {
+    font-size: 13px;
+    font-weight: normal;
+    color: #FFF;
+    display: inline-block;
+    line-height: 20px;
+    background: #5cc26f;
+    font-style: normal;
+    padding: 1px 8px;
+    margin-right: 10px;
+}
+.BlogAnchor a:hover {
+    color: #5cc26f;
+}
+.BlogAnchor a {
+    text-decoration: none;
+}

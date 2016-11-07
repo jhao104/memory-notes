@@ -1,10 +1,6 @@
 {% extends "article/home.html" %}
 {% load custom_markdown %}
 
-{% block jsblock %}
-    <script src="/static/js/func.js"></script>
-{% endblock %}
-
 {% block content %}
     <div class="col-md-10" id="article">
         <div class="markdown-body">
@@ -46,4 +42,8 @@
 
 {% block menu %}
     {% include "article/menu.html" %}
+{% endblock %}
+
+{% block jsfunc %}
+GenerateContentList();
 {% endblock %}

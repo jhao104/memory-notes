@@ -15,7 +15,9 @@
 
     <!-- js -->
     <script src="/static/js/jquery.min.js"></script>
-    <script src="/static/js/func.js"></script>
+
+    {% block jsblock %}
+    {% endblock %}
 
 </head>
 <body>
@@ -39,6 +41,10 @@
 {% include "article/footer.html" %}
 
 </body>
+
+{% block jsfunc %}
+{% endblock %}
+
 <script language="javascript" type="text/javascript">
     GenerateContentList()
 </script>

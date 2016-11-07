@@ -3,7 +3,7 @@
  */
 
 function GenerateContentList() {
-    $(".post-content").find("h2,h3,h4,h5,h6").each(function (i, item) {
+    $(".post-content").find("h2").each(function (i, item) {
         var tag = $(item).get(0).localName;
         $(item).attr("id", "wow" + i);
         $("#AnchorContent").append('<li><a class="new' + tag + ' anchor-link"  href="#wow' + i + '">' + (i + 1) + " · " + $(this).text() + '</a></li>');
@@ -25,5 +25,6 @@ function GenerateContentList() {
         $("#AnchorContent").toggle();
     });
 }
+
 
 

@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'article',
+    'duoshuo'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -109,3 +110,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
+
+RET = '6d6afd69cf8c0d7a563b2c8e10adb304'
+DUOSHUO_SHORT_NAME = 'jhao'

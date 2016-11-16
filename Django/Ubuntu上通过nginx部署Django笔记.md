@@ -142,4 +142,5 @@ python manage.py collectstatic
 一切配置好后直接重启nginx即可。更加详细的说明请参见[官方文档](http://uwsgi-docs.readthedocs.io/en/latest/BuildSystem.html)
 
 ## 可能遇到的问题
-[如果监听80端口，部署后访问localhost自动跳转到nginx默认的欢迎界面](http://www.mamicode.com/info-detail-1442333.html)
+[如果监听80端口，部署后访问localhost自动跳转到nginx默认的欢迎界面](https://segmentfault.com/q/1010000007047896?_ea=1227923)
+[uwsgi: option ‘--http‘ is ambiguous](http://www.mamicode.com/info-detail-1442333.html)

@@ -1,0 +1,53 @@
+*** Starting uWSGI 2.0.14 (64bit) on [Thu Nov 17 21:44:31 2016] ***
+compiled with version: 4.8.4 on 15 November 2016 21:28:00
+os: Linux-3.13.0-86-generic #131-Ubuntu SMP Thu May 12 23:33:13 UTC 2016
+nodename: VM-65-10-ubuntu
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/ubuntu/web_blog/blog
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ubuntu/web_blog
+your processes number limit is 7884
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8001 fd 3
+Python version: 2.7.6 (default, Jun 22 2015, 18:01:27)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x803b50
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 363800 bytes (355 KB) for 4 cores
+*** Operational MODE: preforking ***
+ImportError: No module named blog.wsgi
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 11235)
+spawned uWSGI worker 1 (pid: 11236, cores: 1)
+spawned uWSGI worker 2 (pid: 11237, cores: 1)
+spawned uWSGI worker 3 (pid: 11238, cores: 1)
+spawned uWSGI worker 4 (pid: 11239, cores: 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 11239|app: -1|req: -1/1] 117.139.250.49 () {42 vars in 695 bytes} [Thu Nov 17 21:44:43 2016] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 11238|app: -1|req: -1/2] 117.139.250.49 () {42 vars in 695 bytes} [Thu Nov 17 21:44:45 2016] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 11239|app: -1|req: -1/3] 117.139.250.49 () {42 vars in 695 bytes} [Thu Nov 17 21:44:46 2016] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 11238|app: -1|req: -1/4] 117.139.250.49 () {42 vars in 695 bytes} [Thu Nov 17 21:44:46 2016] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 11239|app: -1|req: -1/5] 117.139.250.49 () {40 vars in 615 bytes} [Thu Nov 17 21:44:51 2016] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 11239|app: -1|req: -1/6] 117.139.250.49 () {44 vars in 748 bytes} [Thu Nov 17 21:44:53 2016] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 11238|app: -1|req: -1/7] 117.139.250.49 () {44 vars in 668 bytes} [Thu Nov 17 21:44:54 2016] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 11238|app: -1|req: -1/8] 180.153.205.252 () {38 vars in 538 bytes} [Thu Nov 17 21:45:03 2016] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 11239|app: -1|req: -1/9] 101.226.33.203 () {38 vars in 576 bytes} [Thu Nov 17 21:45:14 2016] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)

@@ -107,9 +107,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
-)
+#STATICFILES_DIRS = (
+#    os.path.join(BASE_DIR, "static"),
+#)
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 RET = '6d6afd69cf8c0d7a563b2c8e10adb304'
 DUOSHUO_SHORT_NAME = 'jhao'

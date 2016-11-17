@@ -137,6 +137,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 python manage.py collectstatic
 ```
 
+修改配置文件
+```
+DEBUG = False
+ALLOWED_HOSTS = ['*']
+```
 ## 运行
 
 一切配置好后直接重启nginx即可。更加详细的说明请参见[官方文档](http://uwsgi-docs.readthedocs.io/en/latest/BuildSystem.html)
@@ -144,3 +149,4 @@ python manage.py collectstatic
 ## 可能遇到的问题
 [如果监听80端口，部署后访问localhost自动跳转到nginx默认的欢迎界面](https://segmentfault.com/q/1010000007047896?_ea=1227923)
 [uwsgi: option ‘--http‘ is ambiguous](http://www.mamicode.com/info-detail-1442333.html)
+[把settings.py中的DEBUG设置为False前端页面显示不正常了](https://www.v2ex.com/t/184979)

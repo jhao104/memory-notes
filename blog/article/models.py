@@ -35,7 +35,11 @@ class Article(models.Model):
 
     def get_absolute_url(self):
         path = reverse('article:detail', kwargs={'id': self.id})
-        return "http://127.0.0.1:8000%s" % path  # 给多说使用
+        return "http://www.spiderpy.cn%s" % path  # 给多说使用
+
+    def viewed(self):
+        self.view += 1
+        self.save(update_fields=['view'])
 
     class Meta:  # 按时间降序
         ordering = ['-date_time']

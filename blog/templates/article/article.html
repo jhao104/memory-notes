@@ -11,7 +11,7 @@
                     </h1>
                     <div class="entry-meta">
                             <span class="post-category"><a
-                                    href="#">{{ post.category.name }}</a></span>
+                                    href="{% url "article:category" id=post.category_id %}">{{ post.category.name }}</a></span>
 
                             <span class="post-date"><a href="#">
                                 <time class="entry-date" datetime="{{ post.date_time|date:"Y/m/d" }}">{{ post.date_time|date:"Y/m/d" }}</time>

@@ -30,3 +30,8 @@ def detail(request, id):
     post = get_object_or_404(Article, pk=id)
     post.viewed()
     return render(request, 'article/article.html', {"post": post})
+
+
+def category(request, id):
+    post_list = Article.objects.filter(category_id=id)
+    return render(request, 'article/articles.html', {"post_list": post_list})

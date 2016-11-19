@@ -29,7 +29,7 @@
         <ul>
            {% for tag in category %}
                <li>
-                    <a href="#">{{ tag.name }}</a>
+                    <a href="{% url "article:category" id=tag.pk %}">{{ tag.name }}</a>
                </li>
            {% endfor %}
         </ul>

@@ -10,11 +10,13 @@
                    2016/11/19: 
 -------------------------------------------------
 """
-from .models import Article
+from .models import Article, Category
 
 
 def sidebar(request):
     rank_article = Article.objects.order_by("-view")[0:7]
+    category = Category.objects.all()
     return {
         "rank_article": rank_article,
+        "category": category,
     }

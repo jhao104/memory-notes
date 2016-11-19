@@ -43,3 +43,5 @@ class Article(models.Model):
 
     class Meta:  # 按时间降序
         ordering = ['-date_time']
+
+

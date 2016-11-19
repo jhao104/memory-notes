@@ -1,18 +1,12 @@
 <aside class="col-md-3" id="aside" style="position: fixed; right: 0">
     <div class="widget widget-recent-posts">
-        <h3 class="widget-title">Recent Posts</h3>
+        <h3 class="widget-title">Rank Posts</h3>
         <ul>
+            {% for article in rank_article %}
             <li>
-                <a href="#">Adaptive Vs. Responsive
-                    Layouts And Optimal Text Readability</a>
+                <a href="{% url "article:detail" id=article.id %}">{{ article.title }}</a>
             </li>
-            <li>
-                <a href="#">Web Design is 95%
-                    Typography</a>
-            </li>
-            <li>
-                <a href="#">Paper by FiftyThree</a>
-            </li>
+            {% endfor %}
         </ul>
     </div>
     <div class="widget widget-archives">

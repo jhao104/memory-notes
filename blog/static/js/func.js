@@ -7,10 +7,10 @@
  * 自动生成目录
  */
 function GenerateContentList() {
-    $(".post-content").find("h2").each(function (i, item) {
+    $(".post-content").find("h2,h3").each(function (i, item) {
         var tag = $(item).get(0).localName;
         $(item).attr("id", "wow" + i);
-        $("#AnchorContent").append('<li><a class="new' + tag + ' anchor-link"  href="#wow' + i + '">' + (i + 1) + " · " + $(this).text() + '</a></li>');
+        $("#AnchorContent").append('<li><a class="new' + tag + ' anchor-link"  href="#wow' + i + '">' + $(this).text() + '</a></li>');
         $(".newh2").css("margin-left", 0);
         $(".newh3").css("margin-left", 20);
         $(".newh4").css("margin-left", 40);

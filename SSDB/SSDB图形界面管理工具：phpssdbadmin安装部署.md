@@ -5,10 +5,15 @@
 apt-get install nginx
 ```
 ubantu安装完Nginx后，文件结构大致为：
+
 　　所有的配置文件都在 `/etc/nginx`下；
+
 　　启动程序文件在 `/usr/sbin/nginx`下；
+
 　　日志文件在 `/var/log/nginx/`下，分别是access.log和error.log；
+
 　　并且在  `/etc/init.d`下创建了nginx启动脚本
+
 安装完成后可以尝试启动nginx:
 ```
 /etc/init.d/nginx start

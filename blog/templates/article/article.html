@@ -1,6 +1,10 @@
 {% extends "article/home.html" %}
 {% load custom_markdown %}
 
+{% block title %}
+<title>{{ post.title }}</title>
+{% endblock %}
+
 {% block content %}
     <div class="col-md-10" id="article">
         <div class="markdown-body">

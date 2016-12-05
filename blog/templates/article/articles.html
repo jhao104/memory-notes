@@ -1,6 +1,10 @@
 {% extends "article/home.html" %}
 {% load custom_markdown %}
 
+{% block title %}
+<title>j_hao104's &amp; blog</title>
+{% endblock %}
+
 {% block content %}
     <main class="col-md-10" id="article">
         {% paginate post_list 6 %}

@@ -2,8 +2,7 @@
 <html class=" js csstransitions">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    {% block title %}
-    {% endblock %}
+    <title>{{ title|safe }}</title>
 
     <!-- meta -->
 
@@ -22,6 +21,7 @@
 
     {% block jsblock %}
     {% endblock %}
+
 
 </head>
 <body>
@@ -60,4 +60,6 @@
     {% endblock %}
 
 </script>
+{% block js %}
+{% endblock %}
 </html >

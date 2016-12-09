@@ -23,15 +23,26 @@ from article.models import Article
 
 def home(request):
     post_list = Article.objects.all()  # 获取全部文章
-    return render(request, 'article/articles.html', {"post_list": post_list})
+    return render(request, 'article/articles.html', {"post_list": post_list,
+                                                     "title": "j_hao104's blog"})
 
 
 def detail(request, id):
     post = get_object_or_404(Article, pk=id)
     post.viewed()
-    return render(request, 'article/article.html', {"post": post})
+    return render(request, 'article/article.html', {"post": post,
+                                                    "title": post.title})
 
 
 def category(request, id):
     post_list = Article.objects.filter(category_id=id)
-    return render(request, 'article/articles.html', {"post_list": post_list})
+    return render(request, 'article/articles.html', {"post_list": post_list,
+                                                     "title": "j_hao104's blog"})
+
+
+def archives_i(request):
+    return render(request, 'article/archives_i.html')
+
+
+def archives(request):
+    return render(request, 'article/archives.html')

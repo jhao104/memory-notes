@@ -40,9 +40,16 @@ def category(request, id):
                                                      "title": "j_hao104's blog"})
 
 
-def archives_i(request):
-    return render(request, 'article/archives_i.html')
-
-
 def archives(request):
-    return render(request, 'article/archives.html')
+    post_list = Article.objects.order_by('-date_time')
+    post_dict = dict()
+    count = 0
+    for post in post_list:
+        count += 1
+        date_time = post.date_time
+        year = date_time.strftime('%Y')
+        day = date_time.strftime('%m.%d')
+        post_dict[year] = post_dict.get(year, list()) + [{'day': day, 'title': post.title, 'id': post.id}]
+    return render(request, 'article/archives.html', {"title": "j_hao104's blog",
+                                                     'count': count,
+                                                     "post_dict": post_dict})

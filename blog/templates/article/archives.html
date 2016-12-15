@@ -22,8 +22,7 @@
             {% with parent_forloop=forloop.last %}
             <div class="history-date">
                 <ul>
-                    <h2 {% if forloop.first %}class="first" {% else %}class="date02" {% endif %}><a href="#nogo">{{ year
-                        }}年</a></h2>
+                    <h2 {% if forloop.first %}class="first" {% else %}class="date02" {% endif %}><a href="#nogo">{{ year }}年</a></h2>
                     {% for post in post_list %}
                     <li>
                         <h3>{{ post.day }}<span>{{ year }}</span></h3>

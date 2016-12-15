@@ -32,7 +32,7 @@ def sidebar(request):
     pk_dict = dict()
     for tag in article_list:
         stat_dict[tag.category.name] = stat_dict.get(tag.category.name, 0) + 1
-        pk_dict[tag.category.name] = tag.pk
+        pk_dict[tag.category.name] = tag.category_id
     category = [{'pk': pk_dict.get(name), 'name': name, 'count': stat_dict.get(name, 0)} for name in stat_dict]
     return {
         "rank_article": rank_article,

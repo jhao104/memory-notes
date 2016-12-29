@@ -2,7 +2,7 @@
 
 > 英文原文:https://realpython.com/blog/python/introduction-to-mongodb-and-python
 
-　　在这篇文章中，将向您展示如何使用Python链接目前主流的[MongoDB(V3.4.0)](https://www.mongodb.com/)数据库，主要使用[PyMongo(v3.4.0)](https://api.mongodb.com/python/3.4.0/)和[MongoEngine(V0.10.7)](http://mongoengine.org/)。同时比较SQL和NoSQL。
+　　
 
 
 
@@ -234,7 +234,7 @@ for post in scotts_posts:
     print(post)
 ```
 
-### MongoEngine
+### 4、MongoEngine
 
 　　虽然PyMongo是非常容易使用，总体上是一个伟大的轮子，但是许多项目使用它都可能太低水平。简而言之，你必须编写很多自己的代码来持续地保存，检索和删除对象。PyMongo之上提供了一个更高的抽象一个库是MongoEngine。MongoEngine是一个对象文档映射器（ODM），它大致相当于一个基于SQL的对象关系映射器（ORM）。MongoEngine提供的抽象是基于类的，所以你创建的所有模型都是类。虽然有相当多的Python的库可以帮助您使用MongoDB，MongoEngine是一个更好的，因为它有一个很好的组合的功能，灵活性和社区支持。
 

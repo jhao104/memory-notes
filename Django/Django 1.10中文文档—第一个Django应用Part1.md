@@ -214,7 +214,7 @@ url()函数可以传递4个参数，其中2个是必须的：regex和view，以�
 
 regex是正则表达式的通用缩写，它是一种匹配字符串或url地址的语法。Django拿着用户请求的url地址，在urls.py文件中对urlpatterns列表中的每一项条目从头开始进行逐一对比，一旦遇到匹配项，立即执行该条目映射的视图函数或二级路由，其后的条目将不再继续匹配。因此，url路由的编写顺序至关重要！
 
-需要注意的是，regex不会去匹配GET或POST参数或域名，例如对于https://www.example.com/myapp，regex只尝试匹配myapp/。对于https://www.example.com/myapp/?page=3， regex也只尝试匹配myapp/
+需要注意的是，regex不会去匹配GET或POST参数或域名，例如对于https://www.example.com/myapp， regex只尝试匹配myapp/。对于https://www.example.com/myapp/?page=3， regex也只尝试匹配myapp/
 
 ### url() 参数：view
 

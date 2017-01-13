@@ -458,3 +458,5 @@ admin.site.register(Question)
 到此，你对模型API和admin站点有了一定的熟悉，可以进入下一阶段的教程了。
 
 
+
+

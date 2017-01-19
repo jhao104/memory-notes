@@ -92,7 +92,7 @@ url(r'^polls/latest\.html$', views.index),
 
 为了方便，让我们使用[Part1](https://github.com/jhao104/memory-notes/blob/master/Django/Django%201.10%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3-%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%BA%94%E7%94%A8Part1-%E8%AF%B7%E6%B1%82%E4%B8%8E%E5%93%8D%E5%BA%94.md)中介绍的Django自己的数据库API。 下面是一个新的index()视图，它显示系统中最新发布的5条questions记录，并用逗号分隔：
 
-````
+```
 # polls/views.py
 from django.http import HttpResponse
 
@@ -105,7 +105,7 @@ def index(request):
     return HttpResponse(output)
 
 # 保持其他的视图 (detail, results, vote) 不变
-````
+```
 
 这里有一个问题：页面的设计被硬编码在视图中。 如果你想更改页面的外观，就得编辑这段Python代码。 因此，我们使用Django的模板系统，通过创建一个视图能够调用的模板，将页面的设计从Python中分离出来。
 
@@ -294,4 +294,3 @@ urlpatterns = [
 
 <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
 ```
-

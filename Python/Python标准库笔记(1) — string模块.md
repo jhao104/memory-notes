@@ -58,7 +58,7 @@
 ## 3.字符串模板Template
 
 通过string.Template可以为Python定制字符串的替换标准,下面是具体列子：
-```
+```python
 >>>from string import Template
 >>>s = Template('$who like $what')
 >>>print s.substitute(who='i', what='python')
@@ -73,7 +73,7 @@ i like $what
 
 Template还有更加高级的用法，可以通过继承string.Template, 重写变量delimiter(定界符)和idpattern(替换格式), 定制不同形式的模板。
 
-```
+```python
 import string
 
 template_text = '''

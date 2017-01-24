@@ -149,7 +149,7 @@ polls/
 ## 编写视图
 
 让我们写第一个视图。打开文件polls/views.py，并输入以下Python代码：
-```
+```python
 # polls/views.py
 from django.http import HttpResponse
 

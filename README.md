@@ -4,30 +4,29 @@
 
 > 一些个人笔记，方便需要时查阅。喜欢的给个star
 
-## Python
 
-[进入](https://github.com/jhao104/memory-notes/tree/master/Python)
 
-## Pycharm
+* [Python](https://github.com/jhao104/memory-notes/tree/master/Python)
 
-[进入](https://github.com/jhao104/memory-notes/tree/master/Pycharm)
 
-## Django
 
-[进入](https://github.com/jhao104/memory-notes/tree/master/Django)
+* [Pycharm](https://github.com/jhao104/memory-notes/tree/master/Pycharm)
 
-## Pycharm
 
-[进入](https://github.com/jhao104/memory-notes/tree/master/Pycharm)
 
-## Linux
+* [Django](https://github.com/jhao104/memory-notes/tree/master/Django)
 
-[进入](https://github.com/jhao104/memory-notes/tree/master/Linux)
 
-## SSDB
 
-[进入](https://github.com/jhao104/memory-notes/tree/master/SSDB)
+* [Pycharm](https://github.com/jhao104/memory-notes/tree/master/Pycharm)
 
-## ZooKeeper
 
-[进入](https://github.com/jhao104/memory-notes/tree/master/ZooKeeper)
+
+* [Linux](https://github.com/jhao104/memory-notes/tree/master/Linux)
+
+
+* [SSDB](https://github.com/jhao104/memory-notes/tree/master/SSDB)
+
+
+
+* [ZooKeeper](https://github.com/jhao104/memory-notes/tree/master/ZooKeeper)

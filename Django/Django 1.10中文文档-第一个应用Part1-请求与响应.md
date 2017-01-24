@@ -174,7 +174,7 @@ polls/
 ```
 
 编辑polls/urls.py文件：
-```
+```python
 # polls/urls.py
 from django.conf.urls import url
 
@@ -186,7 +186,7 @@ urlpatterns = [
 ```
 
 你可以看到项目根目录下的mysite目录也有个urls.py文件，下一步是让这个项目的主urls.py文件指向我们建立的polls这个app独有的urls.py文件，打开mysite/urls.py文件，你需要先导入include模块，代码如下：
-```
+```python
 from django.conf.urls import include, url
 from django.contrib import admin
 

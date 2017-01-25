@@ -39,7 +39,7 @@ Django使用‘URLconfs’的配置来为URL匹配视图函数。 URLconf使用�
 ## 编辑视图
 
 下面，让我们打开polls/views.py文件，添加下列代码：
-```
+```python
 # polls/views.py
 def detail(request, question_id):
     return HttpResponse("You're looking at question %s." % question_id)
@@ -52,7 +52,7 @@ def vote(request, question_id):
     return HttpResponse("You're voting on question %s." % question_id)
 ```
 然后，在polls/urls.py文件中加入下面的url模式，将其映射到我们上面新增的视图。
-```
+```python
 # polls/urls.py
 from django.conf.urls import url
 
@@ -92,7 +92,7 @@ url(r'^polls/latest\.html$', views.index),
 
 为了方便，让我们使用[Part1](https://github.com/jhao104/memory-notes/blob/master/Django/Django%201.10%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3-%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%BA%94%E7%94%A8Part1-%E8%AF%B7%E6%B1%82%E4%B8%8E%E5%93%8D%E5%BA%94.md)中介绍的Django自己的数据库API。 下面是一个新的index()视图，它显示系统中最新发布的5条questions记录，并用逗号分隔：
 
-```
+```python
 # polls/views.py
 from django.http import HttpResponse
 
@@ -132,7 +132,7 @@ def index(request):
 {% endif %}
 ```
 现在更新polls/views.py中的index视图来使用模板：
-```
+```python
 # polls/views.py
 
 from django.http import HttpResponse
@@ -158,7 +158,7 @@ def index(request):
 
 常见的习惯是载入一个模板、填充一个context 然后返回一个含有模板渲染结果的HttpResponse对象。Django为此提供一个快捷方式。 下面是重写后的index()视图：
 
-```
+```python
 # polls/views.py
 
 from django.shortcuts import render
@@ -179,7 +179,7 @@ render（）函数接受request对象作为其第一个参数，模板名称作�
 ## 404错误
 
 现在，让我们处理Question 详细页面的视图 —— 显示Question内容的页面：
-```
+```python
 # polls/views.py
 
 from django.http import Http404
@@ -206,7 +206,7 @@ def detail(request, question_id):
 ### 快捷方式：get_object_or_404()
 
 一种常见的习惯是使用get()并在对象不存在时引发Http404。Django为此提供一个快捷方式。 下面是重写后的detail()视图：
-```
+```python
 # polls/views.py
 
 from django.shortcuts import get_object_or_404, render
@@ -276,7 +276,7 @@ url(r'^specifics/(?P<question_id>[0-9]+)/$', views.detail, name='detail'),
 教程中的这个项目只有一个应用polls。在真实的Django项目中，可能会有五个、十个、二十个或者更多的应用。 Django如何区分它们URL的名字呢？ 例如，polls 应用具有一个detail 视图，相同项目中的博客应用可能也有这样一个视图。当使用模板标签{% url %}时，人们该如何做才能使得Django知道为一个URL创建哪个应用的视图？
 
 答案是在你的主URLconf下添加命名空间。 在mysite/urls.py文件中，添加命名空间将它修改成：
-```
+```python
 # mysite/urls.py
 
 from django.conf.urls import include, url

@@ -53,7 +53,7 @@ migrate查看INSTALLED_APPS设置并根据mysite/settings.py文件中的数据�
 在这个投票应用中，我们将创建两个模型： Question和Choice。Question对象具有一个question_text（问题）属性和一个publish_date（发布时间）属性。 Choice有两个字段：选择的内容和选择的得票统计。 每个Choice与一个Question关联。
 
 这些概念通过简单的Python类来表示。 编辑polls/models.py文件，并让它看起来像这样：
-```
+```python
 # polls/models.py
 from django.db import models
 
@@ -96,7 +96,7 @@ Field还可以有各种可选参数;在上例中，我们将votes的默认值设
 
 要在我们的项目中包含应用程序，我们需要在INSTALLED_APPS设置中添加对其配置类的引用。 PollConfig类位于polls/aps.py文件中，因此其虚线路径为“polls.apps.PollsConfig”。编辑mysite/settings.py文件，并将该虚线路径添加到INSTALLED_APPS设置。它看起来像这样:
 
-```
+```python
 #  mysite/settings.py
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -210,7 +210,7 @@ python manage.py shell
 我们使用上述命令而不是简单地键入“python”进入python环境，是因为manage.py 设置了`DJANGO_SETTINGS_MODULE`环境变量，该环境变量告诉Django导入mysite/settings.py文件的路径。
 
 > 绕过manage.py: 果你不想使用manage.py，只要设置DJANGO_SETTINGS_MODULE 环境变量为 mysite.settings，启动一个普通的Python shell，然后建立Django：
-```
+```shell
 >>> import django
 >>> django.setup()
 ```
@@ -218,7 +218,7 @@ python manage.py shell
 您必须从manage.py所在的同一目录运行python，或确保该目录在Python搜索路径中，这个import mysite才会成功。
 
 当你进入shell后，尝试一下下面的API吧：
-```
+```shell
 >>> from polls.models import Question, Choice   # 导入我们写的模型类
 
 # question为空
@@ -253,7 +253,7 @@ datetime.datetime(2012, 2, 26, 13, 0, 0, 775217, tzinfo=<UTC>)
 ```
 
 `<Question: Question object>`对于这个对象是一个不可读的内容展示，你无法从中获得任何直观的信息。 让我们来修复这个问题，让Django在打印对象时显示一些我们指定的信息。编辑Question模型（在polls/models.py文件中）并添加一个__str__()方法给Question和Choice：
-```
+```python
 # polls/models.py
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
@@ -275,7 +275,7 @@ class Choice(models.Model):
 
 注意这些都是普通Python方法。让我们演示一下如何添加一个自定义的方法：
 
-```
+```python
 # polls/models.py
 import datetime
 
@@ -291,7 +291,7 @@ class Question(models.Model):
 注意import datetime 和from django.utils import timezone分别引用Python 的标准datetime 模块和Django django.utils.timezone中时区相关的工具。如果你不了解Python中时区的处理方法，你可以在[时区支持](https://docs.djangoproject.com/en/1.10/topics/i18n/timezones/)的文档中了解更多的知识
 
 保存修改后，我们重新启动一个新的python shell ` python manage.py shell`，再来看看其他的API：
-```
+```shell
 >>> from polls.models import Question, Choice
 
 # 添加__str__() 后的效果.
@@ -411,7 +411,7 @@ python manage.py runserver
 现在你还无法看到你的投票应用，必须先在admin中进行注册，告诉admin站点，请将poll的模型加入站点内，接受站点的管理。
 
 打开polls/admin.py文件，加入下面的内容：
-```
+```python
 # polls/admin.py
 from django.contrib import admin
 

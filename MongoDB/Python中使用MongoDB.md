@@ -102,14 +102,14 @@
 　　现在我们已经描述了MongoDB的是什么，让我们来看看如何在Python中实际使用它。由MongoDB开发者发布的官方驱动程序[PyMongo](https://pypi.python.org/pypi/pymongo/)，这里通过一些例子介绍，但你也应该查看[完整的文档](https://api.mongodb.com/python/current/)，因为我们无法面面俱到。
 
 　　当然第一件事就是安装，最简单的方式就是`pip`：
-```
+```shell
 pip install pymongo==3.4.0
 ```
 
 > 注:有关更全面的指南，请查看文档的[安装/升级](https://api.mongodb.com/python/3.4.0/installation.html)页面，并按照其中的步骤进行设置
 
 　　完成设置后，启动的Python控制台并运行以下命令：
-```
+```shell
 >>> import pymongo
 ```
 
@@ -119,32 +119,32 @@ pip install pymongo==3.4.0
  
 　　使用`MongoClient`对象建立连接：
 
-```
+```python
 from pymongo import MongoClient
 client = MongoClient()
 ```
 
 　　使用上面的代码片段，将建立连接到默认主机（localhost）和端口（27017）。您还可以指定主机和/或使用端口：
 
-```
+```python
 client = MongoClient('localhost', 27017)
 ```
 
 　　或者使用MongoURl格式：
 
-```
+```python
 client = MongoClient('mongodb://localhost:27017')
 ```
 
 ### 访问数据库
 
 　　一旦你有一个连接的`MongoClient`实例，你可以在Mongo服务器中访问任何数据库。如果要访问一个数据库，你可以当作属性一样访问：
-```
+```python
 db = client.pymongo_test
 ```
 
 　　或者你也可以使用字典形式的访问：
-```
+```python
 db = client['pymongo_test']
 ```
 
@@ -154,7 +154,7 @@ db = client['pymongo_test']
 
 　　在数据库中存储数据，就如同调用只是两行代码一样容易。第一行指定你将使用哪个集合。在MongoDB中术语中，一个集合是在数据库中存储在一起的一组文档(相当于SQL的表)。集合和文档类似于SQL表和行。第二行是使用集合插入数据insert_one()的方法：
 
-```
+```python
 posts = db.posts
 post_data = {
     'title': 'Python and MongoDB',
@@ -168,7 +168,7 @@ print('One post: {0}'.format(result.inserted_id))
 
 　　我们甚至可以使用insert_one()同时插入很多文档，如果你有很多的文档添加到数据库中，可以使用方法insert_many()。此方法接受一个list参数：
 
-```
+```python
 post_1 = {
     'title': 'Python and MongoDB',
     'content': 'PyMongo is fun, you guys',
@@ -189,7 +189,7 @@ print('Multiple posts: {0}'.format(new_result.inserted_ids))
 ```
 
 　　你应该看到类似输出：
-```
+```python
 One post: 584d947dea542a13e9ec7ae6
 Multiple posts: [
     ObjectId('584d947dea542a13e9ec7ae7'),
@@ -204,7 +204,7 @@ Multiple posts: [
 
 　　检索文档可以使用find_one()方法，比如要找到author为Bill的记录:
 
-```
+```python
 bills_post = posts.find_one({'author': 'Bill'})
 print(bills_post)
 
@@ -219,7 +219,7 @@ print(bills_post)
 
 　　您可能已经注意到，这篇文章的ObjectId是设置的_id，这是以后可以使用唯一标识。如果需要查询多条记录可以使用find()方法：
 
-```
+```python
 scotts_posts = posts.find({'author': 'Scott'})
 print(scotts_posts)
 
@@ -240,12 +240,12 @@ for post in scotts_posts:
 
 
 　　使用pip安装:
-```
+```shell
 pip install mongoengine==0.10.7
 ```
 
 　　连接:
-```
+```python
 from mongoengine import *
 connect('mongoengine_test', host='localhost', port=27017)
 ```
@@ -256,7 +256,7 @@ connect('mongoengine_test', host='localhost', port=27017)
 
 　　建立文档之前，需要定义文档中要存放数据的字段。与许多其他ORM类似，我们将通过继承Document类，并提供我们想要的数据类型来做到这一点：
 
-````
+````python
 import datetime
 
 class Post(Document):
@@ -284,7 +284,7 @@ class Post(Document):
 
 　　这里是创建和保存一个文档的例子：
 
-```
+```python
 post_1 = Post(
     title='Sample Post',
     content='Some engaging content',
@@ -305,7 +305,7 @@ print(post_1.title)
 
 　　当你保存的数据没有title时:
 
-```
+```python
 post_2 = Post(content='Content goes here', author='Michael')
 post_2.save()
 
@@ -320,7 +320,7 @@ ValidationError (Post:None) (Field is required: ['title'])
 
 　　使用MongoEngine是面向对象的，你也可以添加方法到你的子类文档。例如下面的示例，其中函数用于修改默认查询集（返回集合的所有对象）。通过使用它，我们可以对类应用默认过滤器，并只获取所需的对象
 
-```
+```python
 class Post(Document):
     title = StringField()
     published = BooleanField()
@@ -335,7 +335,7 @@ class Post(Document):
 
 　　您还可以使用ReferenceField对象来创建从一个文档到另一个文档的引用。MongoEngine在访问时自动惰性处理引用。
 
-```
+```python
 class Author(Document):
     name = StringField()
 

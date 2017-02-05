@@ -2,7 +2,7 @@
 
 ## 安装Nginx
 
-```
+```shell
 apt-get install nginx
 ```
 
@@ -11,7 +11,7 @@ ubantu安装完Nginx后，文件结构大致为：
 　　启动程序文件在 /usr/sbin/nginx下；
 　　日志文件在 /var/log/nginx/下，分别是access.log和error.log；
 　　并且在  /etc/init.d下创建了启动脚本nginx。
-```
+```shell
 sudo /etc/init.d/nginx start    # 启动
 sudo /etc/init.d/nginx stop     # 停止
 sudo /etc/init.d/nginx restart  # 重启
@@ -20,7 +20,7 @@ sudo /etc/init.d/nginx restart  # 重启
 
 ## 安装uwsgi
 
-```
+```shell
 apt-get install python-dev
 pip install uwsgi
 ```
@@ -32,7 +32,7 @@ pip install uwsgi
 ## 测试uwsgi
 
 在Django项目下新建test.py文件，
-```
+```python
 # test.py
 def application(env, start_response):
     start_response('200 OK', [('Content-Type','text/html')])
@@ -40,11 +40,11 @@ def application(env, start_response):
     #return [b"Hello World"] # python3
 ```
 然后执行shell命令：
-```
+```shell
 uwsgi --http :8001 --plugin python --wsgi-file test.py
 ```
 加上--plugin python是告诉uWSGI在使用python插件，不然很有可能会出现类似这样的错误：
-```
+```shell
 uwsgi: unrecognized option '--wsgi-file'
 getopt_long() error
 ```
@@ -53,12 +53,12 @@ getopt_long() error
 ## 测试Django
 
 首先得保证Django项目没有问题
-```
+```shell
 python manage.py runserver 0.0.0.0:8001
 ```
 访问http://localhost:8001,项目运行正常。
 然后链接Django和uwsgi，实现简单的web服务器，到Django项目目录下执行shell:
-```
+```shell
 uwsgi --http :8001 --plugin python --module blog.wsgi
 ```
 blog为你的项目名。访问http://localhost:8001，项目正常。注意这时项目的静态文件是不会被加载的，需要用nginx做静态文件代理。
@@ -89,7 +89,7 @@ processes       = 4
 vacuum          = true
 ```
 在shell中执行：
-```
+```shell
 sudo uwsgi --ini uwsgi.ini 
 ```
 ps:如果实在不想配置nginx的话，单uwsgi就已经能完成部署了（把socket换成http），你可以把Django中的静态文件放到云平台中如七牛等等，这样你的Web也能被正常访问。
@@ -98,7 +98,7 @@ ps:如果实在不想配置nginx的话，单uwsgi就已经能完成部署了（�
 
 nginx默认会读取`/etc/nginx/sites-enabled/default`文件中的配置，修改其配置如下:
 
-```
+```python
 server {
     # the port your site will be served on
     listen      80;
@@ -128,17 +128,17 @@ server {
 ## 收集Django静态文件
 
 把Django自带的静态文件收集到同一个static中，不然访问Django的admin页面会找不到静态文件。在django的setting文件中，添加下面一行内容：
-```
+```python
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 ```
 然后到项目目录下执行:
 
-```
+```shell
 python manage.py collectstatic
 ```
 
 修改配置文件
-```
+```python
 DEBUG = False
 ALLOWED_HOSTS = ['*']
 ```

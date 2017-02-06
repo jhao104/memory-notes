@@ -2,7 +2,7 @@
 ## 例子
 比如有一段html片段，```<a>this is first label</a><a>the second label</a>```,如何匹配出每个a标签中的内容，下面来看下最短与最长的区别。
 ## 代码
-```
+```shell
 >>> import re
 >>> str = '<a>this is first label</a><a>the second label</a>'
 

@@ -10,7 +10,7 @@
 
 　　在对象生命周期调用结束时，```__del__``` 方法会被调用，可以将```__del__```理解为“构析函数”。下面通过代码的看一看这三个方法:
 
-```
+```python
 from os.path import join
 
 class FileObject:
@@ -47,7 +47,7 @@ class FileObject:
 
 　　在进行属性访问控制定义的时候很可能会很容易引起“无限递归”。如下面代码:
 
-```
+```python
 #  错误用法
 def __setattr__(self, name, value):
     self.name = value
@@ -106,7 +106,7 @@ def __setattr__(self, name, value):
 ### 一个列子
 
 　　下面是书中的例子，用魔术方法来实现Haskell语言中的一个数据结构。
-```
+```python
 # -*- coding: utf-8 -*-
 class FunctionalList:
     ''' 实现了内置类型list的功能,并丰富了一些其他方法: head, tail, init, last, drop, take'''
@@ -183,7 +183,7 @@ class FunctionalList:
 　　允许一个类的实例像函数一样被调用。实质上说，这意味着 *x()* 与 ```x.__call__()``` 是相同的。注意 ```__call__``` 的参数可变。这意味着你可以定义 ```__call__``` 为其他你想要的函数，无论有多少个参数。
 
 　　```__call__``` 在那些类的实例经常改变状态的时候会非常有效。调用这个实例是一种改变这个对象状态的直接和优雅的做法。用一个实例来表达最好不过了:
-```
+```python
 # -*- coding: UTF-8 -*-
 
 class Entity:
@@ -206,7 +206,7 @@ def __call__(self, x, y):
 ## 上下文管理
 
 　　*with*声明是从Python2.5开始引进的关键词。你应该遇过这样子的代码:
-```
+```python
 with open('foo.txt') as bar:
     # do something with bar
 ```
@@ -239,7 +239,7 @@ with open('foo.txt') as bar:
     定义了当描述器的值被删除的时候的行为。instance是拥有该描述器对象的一个实例。
 
 　　下面是一个描述器的实例：单位转换。
-```
+```python
 # -*- coding: UTF-8 -*-
 class Meter(object):
     """
@@ -276,7 +276,7 @@ class Distance(object):
     foot = Foot()
 ```
 　　使用时：
-```
+```shell
 >>>d = Distance()
 >>>print d.foot
 >>>print d.meter

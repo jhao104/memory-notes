@@ -1,7 +1,7 @@
 ## 1、安装kazoo
 
 　　kazoo可以直接使用`pip`或者`easy_install`安装:
-```
+```shell
 pip install kazoo
 ```
 
@@ -10,7 +10,7 @@ pip install kazoo
 ###2.1 连接
 
 　　使用`KazooClient`对象建立连接：
-```
+```python
 from kazoo.client import KazooClient
 
 zk = KazooClient(hosts='10.10.20.127:4181',
@@ -48,7 +48,7 @@ zk.start()
 No handlers could be found for logger "kazoo.client"
 ```
 　　除非你在代码中加入日志对象：
-```
+```python
 import logging
 logging.basicConfig()
 ```
@@ -140,7 +140,7 @@ logging.basicConfig()
 ### 2.4 监听连接事件
 
 　　可用来知道ZooKeeper连接删除、恢复或者过期的消息。为了简化这个过程，Kazoo使用一个状态系统，并允许你注册监听函数，以便在状态改变时被调用。
-```
+```python
 from kazoo.client import KazooState
 
 def my_listener(state):
@@ -199,7 +199,7 @@ zk.add_listener(my_listener)
 
 　　ZooKeeper3.4及以上版本支持[只读模式](https://wiki.apache.org/hadoop/ZooKeeper/GSoCReadOnlyMode)。只有ZooKeeper集群服务启用此模式，客户端才能使用它。只要将KazooClient的read_only设置为True便可以使客户端连接到只读的Zookeeper节点。
 
-```
+```python
 from kazoo.client import KazooClient
 
 zk = KazooClient(hosts='127.0.0.1:2181', read_only=True)

@@ -1,5 +1,5 @@
 ##单继承时super()和__init__()实现的功能是类似的
-```
+```python
 class Base(object):
     def __init__(self):
         print 'Base create'
@@ -34,13 +34,13 @@ creat B  Base create
 ##super()只能用于新式类中
 
 把基类改为旧式类，即不继承任何基类
-```
+```python
 class Base():
     def __init__(self):
         print 'Base create'
 ```
 执行时，在初始化b时就会报错：
-```
+```python
 super(childB, self).__init__()
 TypeError: must be type, not classobj
 ```
@@ -48,14 +48,14 @@ TypeError: must be type, not classobj
 
 ##super不是父类，而是继承顺序的下一个类
 在多重继承时会涉及继承顺序，super（）相当于返回继承顺序的下一个类，而不是父类，类似于这样的功能：
-```
+```python
 def super(class_name, self):
     mro = self.__class__.mro()
     return mro[mro.index(class_name) + 1]
 ```
 mro()用来获得类的继承顺序。
 例如：
-```
+```python
 class Base(object):
     def __init__(self):
         print 'Base create'
@@ -109,7 +109,7 @@ leave A
 
 如果是继承链里之后的类便会忽略继承链汇总本身和传入类之间的类；
 
-比如将childA()中的super改为：super(childC, self).__init__()，程序就会无限递归下去。
+比如将childA()中的super改为：`super(childC, self).__init__()`，程序就会无限递归下去。
 如：
 ```
   File "C:/Users/Administrator/Desktop/crawler/learn.py", line 10, in __init__
@@ -144,7 +144,7 @@ RuntimeError: maximum recursion depth exceeded while calling a Python object
 
 ##super()可以避免重复调用
 如果childA基础Base, childB继承childA和Base，如果childB需要调用Base的__init__()方法时，就会导致__init__()被执行两次：
-```
+```python
 class Base(object):
     def __init__(self):
         print 'Base create'
@@ -171,7 +171,7 @@ leave A
 Base create
 ```
 使用super()是可避免重复调用
-```
+```python
 class Base(object):
     def __init__(self):
         print 'Base create'

@@ -1,7 +1,7 @@
 > 环境： 14.04.1-Ubuntu
 
 ## 1、安装Nginx
-```
+```shell
 apt-get install nginx
 ```
 ubantu安装完Nginx后，文件结构大致为：
@@ -15,14 +15,14 @@ ubantu安装完Nginx后，文件结构大致为：
 　　并且在  `/etc/init.d`下创建了nginx启动脚本
 
 安装完成后可以尝试启动nginx:
-```
+```shell
 /etc/init.d/nginx start
 ```
 然后能通过浏览器访问到 http://localhost/, 一切正常，如不能访问请检查原因。
 
 ## 2、安装PHP 和php-fpm
 
-```
+```shell
 sudo apt-get install php5-fpm
 sudo apt-get install php5-gd  # Popular image manipulation library; used extensively by Wordpress and it's plugins.
 sudo apt-get install php5-cli   # Makes the php5 command available to the terminal for php5 scripting
@@ -34,13 +34,13 @@ sudo apt-get install php5-readline  # Allows PHP5 scripts to use the readline fu
 
 查看php5运行进程：
 
-```
+```shell
 ps -waux | grep php5
 ```
 
 启动关闭php5进程
 
-```
+```shell
 sudo service php5-fpm stop
 sudo service php5-fpm start
 sudo service php5-fpm restart
@@ -52,7 +52,7 @@ sudo service php5-fpm status
 
 nginx的配置文件 `/etc/nginx/nginx.conf中include了/etc/nginx/sites-enabled/*`，因此可以去修改`/etc/nginx/sites-enabled`下的配置文件
 
-```
+```shell
 vi /etc/nginx/sites-available/default
 ```
 
@@ -79,14 +79,14 @@ fastcgi_param PATH_INFO $fastcgi_script_name;
 ```
 
 然后reload Nginx：
-```
+```shell
 sudo service nginx reload
 ```
 
 ## 4、验证php是否配置成功
 
 新建phpinfo.php文件：
-```
+```shell
 sudo vim /usr/share/nginx/html/phpinfo.php
 ```
 
@@ -102,7 +102,7 @@ sudo vim /usr/share/nginx/html/phpinfo.php
 
 下载phpssdbadmin到`/usr/share/nginx/html`目录下：
 
-```
+```shell
 cd /usr/share/nginx/html
 git clone https://github.com/ssdb/phpssdbadmin.git
 ```
@@ -125,7 +125,7 @@ git clone https://github.com/ssdb/phpssdbadmin.git
 
 
 修改nginx的配置文件：
-```
+```shell
 vim /etc/nginx/sites-enabled/default
 ```
 添加：

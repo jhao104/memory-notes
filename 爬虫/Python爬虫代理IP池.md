@@ -116,7 +116,7 @@ pip install -r requirements.txt
     
 
 　　爬虫中使用，如果要在爬虫代码中使用的话， 可以将此api封装成函数直接使用，例如:
-```
+```python
 import requests
 
 def get_proxy():

@@ -4,6 +4,10 @@
 
 |  常用方法 | 描述 |
 |---|---|
-| re.match() |  返回匹配的MatchObject实例或者None |
-| re.search() | 扫描字符串，搜索首次由该正则表达式模式产生匹配的位置，并返回相应的MatchObject实例或者None |
-| re.sub()| 
+| match(pattern, string, flags=0) |如果字符串string的开头和正则表达式pattern匹配返回相应的MatchObject的实例，否则返回None|
+| search(pattern, string, flags=0) | 扫描string，如果有个位置可以匹配正则表达式pattern，就返回一个MatchObject的实例，否则返回None |
+| sub(pattern, repl, string, count=0, flags=0)| 将string里匹配pattern的部分，用repl替换掉，最多替换count次|
+| subn(pattern, repl, string, count=0, flags=0)| 和sub类似，subn返回的是一个替换后的字符串和匹配次数组成的元组|
+| split(pattern, string, maxsplit=0, flags=0)| 用pattern匹配到的字符串来分割string |
+| findall(pattern, string, flags=0) | 以列表的形式返回string里匹配pattern的字符串 |
+| compile(pattern, flags=0)compile(pattern, flags=0) | 把一个正则表达式pattern编译成正则对象，以便可以用正则对象的match和search方法 |

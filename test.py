@@ -14,3 +14,8 @@ __author__ = 'JHao'
 
 import re
 
+sql = ('SELECT count() FROM table '
+       'WHERE id = "10" '
+       'GROUP BY sex')
+
+print sql

@@ -111,9 +111,48 @@ print MyTemplate(template_text).safe_substitute(d)  # 使用重写后的MyTempla
     Ingored : %notunderscored
 ```
 
-可以看出原生的Template只会渲染界定符为$的情况，重写后的MyTemplate会渲染界定符为%且替换格式带有下划线的情况。
+原生的Template只会渲染界定符为$的情况，重写后的MyTemplate会渲染界定符为%且替换格式带有下划线的情况。
 
+## 4.常用字符串技巧
 
+* 1.反转字符串
+
+```python
+>>> s = '1234567890'
+>>> print s[::-1]
+0987654321
+```
+
+* 2.关于字符串链接
+
+　　尽量使用join()链接字符串，因为'+'号连接n个字符串需要申请n-1次内存,使用join()需要申请1次内存。
+
+* 3.固定长度分割字符串
+
+```python
+>>> import re
+>>> s = '1234567890'
+>>> re.findall(r'.{1,3}', s)  # 已三个长度分割字符串
+['123', '456', '789', '0']
+```
+
+* 4.使用()括号生成字符串
+
+```
+sql = ('SELECT count() FROM table '
+       'WHERE id = "10" '
+       'GROUP BY sex')
+
+print sql
+
+SELECT count() FROM table WHERE id = "10" GROUP BY sex
+```
+
+* 5.将print的字符串写到文件
+
+```python
+>>> print >> open("somefile.txt", "w+"), "Hello World"  # Hello World将写入文件somefile.txt
+```
 
 
 

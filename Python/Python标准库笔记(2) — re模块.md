@@ -11,3 +11,17 @@
 | split(pattern, string, maxsplit=0, flags=0)| 用pattern匹配到的字符串来分割string |
 | findall(pattern, string, flags=0) | 以列表的形式返回string里匹配pattern的字符串 |
 | compile(pattern, flags=0)compile(pattern, flags=0) | 把一个正则表达式pattern编译成正则对象，以便可以用正则对象的match和search方法 |
+| purge()| Clear the regular expression cache |
+| escape(string)| 把string中除了字母和数字以外的字符，都加上反斜杆 |
+
+## 2. 特殊匹配符
+
+| 语法  | 说明
+|---|---|
+| .  | 匹配除了换行符外的任何字符 |
+| ^  | 头匹配 |
+| $ | 尾匹配 |
+| * | 匹配前一个字符0次或多次|
+| + | 匹配前一个字符1次或多次|
+| ? | 匹配前一个字符0次或一次|
+

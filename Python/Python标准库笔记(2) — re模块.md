@@ -24,4 +24,73 @@
 | * | 匹配前一个字符0次或多次|
 | + | 匹配前一个字符1次或多次|
 | ? | 匹配前一个字符0次或一次|
+| {m,n} | 匹配前一个字符m至n次|
+| \ |对任一特殊字符进行转义|
+| [] |用来表示一个字符集合|
+| \| |或,代表左右任意匹配一个|
+
+## 3. 模块方法
+
+### re.match(pattern, string, flags=0)
+
+　　从字符串的开始匹配，如果pattern匹配到就返回一个Match对象实例(Match对象在后面描述)，否则放回None。flags为标志位(标志位会在下面描述)，用于控制正则表达式的匹配方式。
+```python
+import re
+
+a = 'abcdefg'
+print re.match(r'abc', a)  # 匹配成功
+print re.match(r'abc', a).group()
+print re.match(r'cde', a)  # 匹配失败
+
+>>><_sre.SRE_Match object at 0x0000000001D94578>
+>>>abc
+>>>None
+
+```
+
+### search(pattern, string, flags=0)
+
+　　用于查找字符串中可以匹配成功的子串，如果找到就返回一个Match对象实例,否则返回None。
+```python
+import re
+
+a = 'abcdefg'
+print re.search(r'bc', a)
+print re.search(r'bc', a).group()
+print re.search(r'123', a)
+
+>>><_sre.SRE_Match object at 0x0000000001D94578>
+>>>bc
+>>>None
+```
+
+### sub(pattern, repl, string, count=0, flags=0)
+
+　　替换，将string里匹配pattern的部分，用repl替换掉，最多替换count次（剩余的匹配将不做处理），然后返回替换后的字符串。
+```python
+import re
+
+a = 'a1b2c3'
+print re.sub(r'\d+', '0', a)  # 将数字替换成'0'
+print re.sub(r'\s+', '0', a)  # 将空白字符替换成'0'
+
+>>>a0b0c0
+>>>a1b2c3
+```
+
+### subn(pattern, repl, string, count=0, flags=0)
+
+　　跟sub()函数一样，只是它返回的是一个元组，包含新字符串和匹配到的次数
+
+```python
+import re
+
+a = 'a1b2c3'
+print re.subn(r'\d+', '0', a)  # 将数字替换成'0'
+
+>>>('a0b0c0', 3)
+```
+
+
+
 

@@ -33,7 +33,7 @@
 
 ### re.match(pattern, string, flags=0)
 
-　　从字符串的开始匹配，如果pattern匹配到就返回一个Match对象实例(Match对象在后面描述)，否则放回None。flags为标志位(标志位会在下面描述)，用于控制正则表达式的匹配方式。
+　　从字符串的开始匹配，如果pattern匹配到就返回一个Match对象实例(Match对象在后面描述)，否则放回None。flags为匹配模式(会在下面描述)，用于控制正则表达式的匹配方式。
 ```python
 import re
 
@@ -91,6 +91,116 @@ print re.subn(r'\d+', '0', a)  # 将数字替换成'0'
 >>>('a0b0c0', 3)
 ```
 
+### split(pattern, string, maxsplit=0, flags=0)
+
+　　正则版的split(),用匹配pattern的子串来分割string，如果pattern里使用了圆括号，那么被pattern匹配到的串也将作为返回值列表的一部分,maxsplit为最多被分割的字符串。
+
+```python
+import re
+
+a = 'a1b1c'
+print re.split(r'\d', a)
+print re.split(r'(\d)', a)
+
+>>>['a', 'b', 'c']
+>>>['a', '1', 'b', '1', 'c']
+```
+
+### findall(pattern, string, flags=0)
+
+　　以列表的形式返回string里匹配pattern的不重叠的子串。
+
+```python
+import re
+
+a = 'a1b2c3d4'
+print re.findall('\d', a)
+
+>>>['1', '2', '3', '4']
+```
+
+## 4. Match对象
+
+　　re.match()、re.search()成功匹配的话都会返回一个Match对象，它包含了很多此次匹配的信息，可以使用Match提供的属性或方法来获取这些信息。例如：
+```
+>>>import re
+
+>>>str = 'he has 2 books and 1 pen'
+>>>ob = re.search('(\d+)', str)
+
+>>>print ob.string  # 匹配时使用的文本
+he has 2 books and 1 pen
+
+>>>print ob.re # 匹配时使用的Pattern对象
+re.compile(r'(\d+)')
+
+>>>print ob.group()  # 获得一个或多个分组截获的字符串
+2
+
+>>>print ob.groups()  # 以元组形式返回全部分组截获的字符串
+('2',)
+
+```
+
+## Pattern对象
+
+　　Pattern对象对象由re.compile()返回，它带有许多re模块的同名方法，而且方法作用类似一样的。例如:
+```python
+>>>import re
+>>>pa = re.compile('(d\+)')
+
+>>>print pa.split('he has 2 books and 1 pen')
+['he has ', '2', ' books and ', '1', ' pen']
+
+>>>print pa.findall('he has 2 books and 1 pen')
+['2', '1']
+
+>>>print pa.sub('much', 'he has 2 books and 1 pen')
+he has much books and much pen
+```
+
+## 匹配模式
+
+　　匹配模式取值可以使用按位或运算符'|'表示同时生效，比如re.I | re.M, 下面是常见的一些flag。
+
+* re.I(re.IGNORECASE): 忽略大小写
+
+```python
+>>>pa = re.compile('abc', re.I)
+>>>pa.findall('AbCdEfG')
+>>>['AbC']
+```
+
+* re.L(re.LOCALE)：字符集本地化
+
+　　这个功能是为了支持多语言版本的字符集使用环境的，比如在转义符`\w`，在英文环境下，它代表`[a-zA-Z0-9]`，即所以英文字符和数字。如果在一个法语环境下使用，有些法语字符串便匹配不上。加上这L选项和就可以匹配了。不过这个对于中文环境似乎没有什么用，它仍然不能匹配中文字符。
+
+* re.M(re.MULTILINE): 多行模式，改变'^'和'$'的行为
+
+```python
+>>>pa = re.compile('^\d+')
+>>>pa.findall('123 456\n789 012\n345 678')
+>>>['123']
+
+>>>pa_m = re.compile('^\d+', re.M)
+>>>pa_m.findall('123 456\n789 012\n345 678')
+>>>['123', '789', '345']
+```
 
 
+* re.S(re.DOTALL): 点任意匹配模式，改变'.'的行为
 
+　　`.`号将匹配所有的字符。缺省情况下`.`匹配除换行符`\n`外的所有字符，使用这一选项以后，点号就能匹配包括换行符的任何字符。
+
+* re.U(re.UNICODE): 根据Unicode字符集解析字符
+
+* re.X(re.VERBOSE): 详细模式
+
+```python
+# 这个模式下正则表达式可以是多行，忽略空白字符，并可以加入注释。以下两个正则表达式是等价的
+a = re.compile(r"""\d +  # the integral part
+                   \.    # the decimal point
+                   \d *  # some fractional digits""", re.X)
+b = re.compile(r"\d+\.\d*")
+# 但是在这个模式下，如果你想匹配一个空格，你必须用'/ '的形式（'/'后面跟一个空格）
+```

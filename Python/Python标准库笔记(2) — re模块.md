@@ -142,7 +142,7 @@ re.compile(r'(\d+)')
 
 ```
 
-## Pattern对象
+## 5.Pattern对象
 
 　　Pattern对象对象由re.compile()返回，它带有许多re模块的同名方法，而且方法作用类似一样的。例如:
 ```python
@@ -159,7 +159,7 @@ re.compile(r'(\d+)')
 he has much books and much pen
 ```
 
-## 匹配模式
+## 6.匹配模式
 
 　　匹配模式取值可以使用按位或运算符'|'表示同时生效，比如re.I | re.M, 下面是常见的一些flag。
 

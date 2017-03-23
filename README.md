@@ -1,4 +1,4 @@
-[欢迎光临我的博客小站](http://www.spiderpy.cn/)
+[欢迎光临我的博客小站](http://www.spiderpy.cn/blog/)
 
 # Good memory as bad written
 

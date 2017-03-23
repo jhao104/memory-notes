@@ -132,7 +132,7 @@ cookie = parseCookie(cookie_str)
 print getHtml(TARGET_URL, cookie)[0:500]
 ```
 
-　　下面是完整代码:
+　　下面是完整[代码](https://github.com/jhao104/memory-notes/blob/master/Python/Python%E7%88%AC%E8%99%AB%E2%80%94%E7%A0%B4%E8%A7%A3JS%E5%8A%A0%E5%AF%86%E7%9A%84Cookie.md):
 ```python
 # -*- coding: utf-8 -*-
 """

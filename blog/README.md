@@ -1,1 +1,1 @@
-[my blog](http://www.spiderpy.cn/)
+[my blog](http://www.spiderpy.cn/blog/)

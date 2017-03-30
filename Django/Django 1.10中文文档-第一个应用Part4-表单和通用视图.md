@@ -3,7 +3,7 @@
 ## 一个简单表单
 
 　　更新一下在上一个教程中编写的投票详细页面的模板`polls/detail.html`，让它包含一个`HTML<form>` 元素：
-```
+```html
 # polls/templates/polls/detail.html
 
 <h1>{{ question.question_text }}</h1>

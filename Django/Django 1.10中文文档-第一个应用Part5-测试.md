@@ -1,0 +1,1 @@
+　　本教程上接教程[Part4](https://github.com/jhao104/memory-notes/blob/master/Django/Django%201.10%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3-%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%BA%94%E7%94%A8Part4-%E8%A1%A8%E5%8D%95%E5%92%8C%E9%80%9A%E7%94%A8%E8%A7%86%E5%9B%BE.md)。 前面已经建立一个网页投票应用，现在将为它创建一些自动化测试。

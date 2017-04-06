@@ -111,7 +111,6 @@ LOG_COLORS = {
     'EXCEPTION': COLOR_RED + '%s' + COLOR_RESET,
 }
 
-
 # # Global logger
 # g_logger = None
 #
@@ -237,20 +236,9 @@ LOG_COLORS = {
 # g_logger.info('123')
 
 
+from datetime import timedelta, date, time, datetime
 
-import logging
+d = date.today()
 
-from kazoo.client import KazooClient
-
-zk = KazooClient(hosts='kunlun026:3355',
-                 timeout=10.0,
-                 client_id=None,
-                 handler=None,
-                 default_acl=None,
-                 auth_data=None,
-                 read_only=None,
-                 randomize_hosts=True,
-                 connection_retry=None,
-                 command_retry=None,
-                 logger=None)
-zk.start()
+print d
+print d - timedelta(days=5)

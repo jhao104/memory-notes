@@ -1,0 +1,601 @@
+
+
+<!DOCTYPE html>
+<html >
+<head>
+
+<title>相册 - 晓晓博客</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta  charset="gb2312" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="images/favicon.ico" />
+
+<script src="js/jquery.2.1.4.min.js"></script>
+<script src="js/my.js"></script>
+<script>
+	$("html").append("<div class='jiazai'><img src='/images/icon/loading.gif'/><span>正在加载中请等待...</span></div>")
+	
+</script>
+<!--CSS-->
+<link rel="stylesheet" href="css/default.css"/>
+<link rel="stylesheet" href="css/public.css"/>
+<link rel="stylesheet" href="css/animation.css"/>
+
+<link rel="stylesheet" type="text/css"href="css/skin_1.css"title="qingxin" />
+<link rel="stylesheet" type="text/css" href="css/skin_2.css"title="jianyue" />
+<link rel="stylesheet" type="text/css" href="css/skin_3.css"title="qingshuang" />
+<link rel="stylesheet" href="css/font-icon.css"/>
+<link rel="stylesheet" href="css/flexslider.css"/>
+<link rel="stylesheet" href="css/face.css"/>
+<!--JS-->
+
+<script src="js/superbg.min.js"></script>
+<script src="js/superbg-custom.js"></script>
+<script src="js/jquery.flexslider-min.js"></script>
+<script src="js/album.js"></script>
+<script src="js/tooltip.js"></script>
+<script src="js/face.js"></script>
+<script src="js/layer/layer.js" ></script>
+<script src="js/checkform.js" charset="gb2312"></script>
+<!--[if lte IE 8]>
+	<script>window.location.href='http://cdn.dmeng.net/upgrade-your-browser.html?referrer='+location.href;</script>
+<![endif]-->
+
+
+<script>
+$(function(){
+	if($(".wall").children("li").length>=10){
+		
+		$(".pagintion").show();
+		$(".wall").css("margin-bottom","10px");
+	}
+	else{
+	
+	$(".pagination").hide();
+	$(".wall").css("margin-bottom","90px");
+	
+	}
+});
+</script>
+
+</head>
+
+<body class="nobg">
+ <!--导航开始-->
+
+<header class="myheader">
+	<div class="top">
+		<!--头像左边部分-->
+		<div class="top-left">
+		  <div class="logo"><a href="/"><img src="images/logo.gif"/></a></div>
+			
+				
+			
+				<!--滚动消息-->
+			<div class="web-xiaoxi">
+				<i class="el-speaker"></i>
+				<ul class="mulitline">
+					
+					<li>正在最后的优化正在最后的优化正在最后的优化</li>
+					<li>完成后将放出模板</li>
+					<li>完美自适应手机</li>
+				</ul>
+			</div>
+				<!--END 消息 -->
+			
+			<!--手机菜单按钮-->
+			<div class="mobile-nav"><i class="el-lines"></i><i class="el-remove"></i></div>
+		</div>
+	<!--电脑导航开始-->
+		<nav class="mynav">
+			<ul class="orange-text">
+				<li class=""><a href="/">首页</a></li>
+
+
+				<li  >
+					<a href="/About/" >关于</a>
+					
+				</li>
+
+
+				<li  >
+					<a href="/Shuo/" >说说</a>
+					
+				</li>
+
+
+				<li class='drop'  >
+					<a href="JavaScript:;" >分类<i class='el-chevron-down'></i></a>
+					 
+                    
+					<div class="drop-nav orange-text ">
+						<ul>
+	
+							<li><a href="/List/?1+1.html" >生活哲理</a></li>
+	
+							<li><a href="/List/?2+1.html" >程序交流</a></li>
+	
+							<li><a href="/List/?3+1.html" >关于游戏</a></li>
+	
+							<li><a href="/List/?7+1.html" >趣闻杂谈</a></li>
+	
+							<li><a href="/List/?5+1.html" >一场旅行</a></li>
+	
+						</ul>
+					</div>
+                    
+				</li>
+
+
+				<li  >
+					<a href="/Links/" >链接</a>
+					
+				</li>
+
+
+				<li  >
+					<a href="/Album/" >相册</a>
+					
+				</li>
+
+
+				<li  >
+					<a href="/Downlist/" >素材</a>
+					
+				</li>
+
+
+				<li  >
+					<a href="/FeedBack/" >留言</a>
+					
+				</li>
+
+			</ul>
+		</nav>
+		
+		<!--这里是手机导航-->
+		<div class="mob-menu">
+		<!--手机顶部搜索-->
+			<div class="search ">
+				<form action="/Search/" method="get">
+					<div class="search-index">
+						<input name="s" type="text"  placeholder="请输入关键字" onfocus="this.placeholder=''" onblur="this.placeholder='请输入关键字'"/>
+						<i class="el-search"><input value=" "type="submit"/></i>
+					</div>
+				</form>
+			</div>
+			<!--手机下拉菜单-->
+			<ul>
+				<li><a href="/">首页</a></li>
+	
+				<li >
+					<a href="/About/">关于</a>
+					
+					</li>
+	
+				<li >
+					<a href="/Shuo/">说说</a>
+					
+					</li>
+	
+				<li class='mob-drop' >
+					<a href="javascrip:;">分类<i></i></a>
+					 
+					<ul class="mob-dropmenu">
+	
+							<li><a href="/List/?1+1.html" >生活哲理</a></li>
+	
+							<li><a href="/List/?2+1.html" >程序交流</a></li>
+	
+							<li><a href="/List/?3+1.html" >关于游戏</a></li>
+	
+							<li><a href="/List/?7+1.html" >趣闻杂谈</a></li>
+	
+							<li><a href="/List/?5+1.html" >一场旅行</a></li>
+	
+						</ul>
+						
+					</li>
+	
+				<li >
+					<a href="/Links/">链接</a>
+					
+					</li>
+	
+				<li >
+					<a href="/Album/">相册</a>
+					
+					</li>
+	
+				<li >
+					<a href="/Downlist/">素材</a>
+					
+					</li>
+	
+				<li >
+					<a href="/FeedBack/">留言</a>
+					
+					</li>
+	
+				</ul>
+			</div>
+	</div>
+<!--换肤--->
+<script src="js/skin.js"></script>
+<div class="select-skin">
+<div class="skin-btn">
+    <a href="javascript:void(0);" class="skin-btn-open">换<br>肤</a>
+</div>
+
+<div class="skin-content">
+    <h1>选择风格<span class="skin-close">关闭</span></h1>
+    <div class="skin-content-list">
+        <div class="skin-list"><a href="#" onclick="setActiveStyleSheet('qingxin'); return false;" class="btn1">清新</a></div>
+        <div class="skin-list"><a href="#" onclick="setActiveStyleSheet('jianyue'); return false;" class="btn2">简约</a></div>
+		 <div class="skin-list"><a href="#" onclick="setActiveStyleSheet('qingshuang'); return false;" class="btn3">清爽</a></div>
+    </div>
+</div>	
+</div>
+</header>
+<!--导航结束-->
+
+
+    <div class="container">
+
+        <div class="album w95">
+
+			<h4 class="index-title"><a href="photos" class="all"><i class="el-camera"></i>查看所有相片> ></a></h4>     	 
+
+           <ul class="wall">
+       	 
+
+
+			<li class="wall-li">
+				<a  class="orange-text" href="photos/?1+1.html" title="GTA5的精美截图">
+					<img alt="GTA5" src="Album/img/2016411182621846.jpg" />
+					<p>GTA5</p>
+					<!--<small></i>GTA5的精美截图</small>-->
+					<small><i class="el-time"></i>2016/4/11</small>
+					<small><i class="el-comment"></i>0</small>
+				</a>
+			</li>
+
+ 
+
+
+			<li class="wall-li">
+				<a  class="orange-text" href="photos/?3+1.html" title="孤岛惊魂4精美截图">
+					<img alt="孤岛惊魂4" src="Album/img/2016411183132476.jpg" />
+					<p>孤岛惊魂4</p>
+					<!--<small></i>孤岛惊魂4精美截图</small>-->
+					<small><i class="el-time"></i>2016/4/11</small>
+					<small><i class="el-comment"></i>0</small>
+				</a>
+			</li>
+
+ 
+
+
+			<li class="wall-li">
+				<a  class="orange-text" href="photos/?4+1.html" title="关于义乌">
+					<img alt="关于义乌" src="Album/img/2016411192233455.jpg" />
+					<p>关于义乌</p>
+					<!--<small></i>关于义乌</small>-->
+					<small><i class="el-time"></i>2016/4/11</small>
+					<small><i class="el-comment"></i>0</small>
+				</a>
+			</li>
+
+ 
+
+
+			<li class="wall-li">
+				<a  class="orange-text" href="photos/?5+1.html" title="暂无描述">
+					<img alt="摄影" src="Album/img/2016418225948574.jpg" />
+					<p>摄影</p>
+					<!--<small></i>暂无描述</small>-->
+					<small><i class="el-time"></i>2016/4/18</small>
+					<small><i class="el-comment"></i>0</small>
+				</a>
+			</li>
+
+ 
+	
+
+         
+		
+
+
+	
+		</ul>
+
+
+
+<div class="pagination">
+	<div class="list-page">
+		<ul class="post-data">
+			<li ><a>第 1 - 1 页</a> <a>共 4 条</a></li>
+		</ul>
+	</div>
+	<ul>
+						
+		
+		<li class="active"><a>首页</a></li>
+		
+		<li class="active"><a>上一页</a></li>
+		
+		<li class="active"><a>下一页</a></li>
+		<li class="active"><a>尾页</a></li>
+		
+	</ul>
+ 
+</div>
+<!-- End gallery list-->
+
+
+
+
+	
+
+	<script type="text/javascript">
+		$(function(){
+			$('.wall').jaliswall({ item: '.wall-li' });
+			var xlen=$(".wall .wall-column").length
+			for (var x=0;x<=xlen;x++){
+						
+						$(".wall .wall-column").eq(x).css({
+							"-webkit-animation-name":"zhengshang",
+							"-webkit-animation-duration":x/5+0.5+"s",
+							"animation-name":"zhengshang",
+							"animation-duration":x/5+0.5+"s"
+				});
+				
+					
+			}	
+		});
+	</script>    
+		</div> <!-- End Container -->
+</div>
+<!--主题框架结束-->
+<!---底部开始-->
+<footer>
+	<div class="footer-area">
+	<!--博客相关-->
+	<div class="about-blog">
+		<h4>素材排行</h4>
+		<div class="ft-part1">
+			
+
+				
+					<!--文章排行-->
+				<ul class="paihang-ul" style="display:block;width:100%;">
+					
+							<li><span></span><a href="/Downdetail/?49.html" title="我想到网上调查我说的">我想到网上调查我说的<b>(35)</b></a></li>
+					
+							<li><span></span><a href="/Downdetail/?56.html" title="马自达3昂克赛拉">马自达3昂克赛拉<b>(9)</b></a></li>
+					
+							<li><span></span><a href="/Downdetail/?57.html" title="20条经典搞笑段子20条经典搞笑段20条经典搞笑段">20条经典搞笑段子20条经<b>(9)</b></a></li>
+					
+							<li><span></span><a href="/Downdetail/?51.html" title="【2016】3月份现状有意义">【2016】3月份现状有意<b>(7)</b></a></li>
+					
+							<li><span></span><a href="/Downdetail/?59.html" title="这一生，你最重要的事情是让自己幸福">这一生，你最重要的事情是让<b>(7)</b></a></li>
+						
+				</ul>
+				
+				
+		</div>
+	</div>
+	<!--最新留言-->
+	<div class="close-fd mob-hidden">
+		 <h4>留言频道</h4>
+		<ul >
+								 
+			<li>
+				
+			<div class="sd-tx">
+			
+				<a href="url/?www.dawnfly.cn" target="_blank" rel="nofollow" title="去 破晓博客 的网站看看 ?">
+				
+					<img src="images/Portrait/81.jpg" alt="破晓博客" class="img-circle"/>
+				</a>
+			</div>
+			<div class="sd-name">
+				<span>破晓博客</span>
+				<a class="blue-text" href="FeedBack/#Comment-86" title="改版的很漂亮[Q0]" >改版的很漂亮[Q0]...</a>
+			</div>
+			</li>
+			 
+			<li>
+				
+			<div class="sd-tx">
+			
+				<a href="url/?www.pickxy.cn" target="_blank" rel="nofollow" title="去 小陈 的网站看看 ?">
+				
+					<img src="images/Portrait/39.jpg" alt="小陈" class="img-circle"/>
+				</a>
+			</div>
+			<div class="sd-name">
+				<span>小陈</span>
+				<a class="blue-text" href="FeedBack/#Comment-85" title="老大 啥时候放出来呢" >老大 啥时候放出来呢...</a>
+			</div>
+			</li>
+			 
+			<li>
+				
+			<div class="sd-tx">
+			
+				<a href="url/?www.zoukan.pw" target="_blank" rel="nofollow" title="去 脱倪粥 的网站看看 ?">
+				
+					<img src="images/Portrait/41.jpg" alt="脱倪粥" class="img-circle"/>
+				</a>
+			</div>
+			<div class="sd-name">
+				<span>脱倪粥</span>
+				<a class="blue-text" href="FeedBack/#Comment-84" title="[Q4]博客改版的很不错噢，很漂亮~~" >[Q4]博客改版的很不错噢，很漂亮~~...</a>
+			</div>
+			</li>
+				
+        </ul>
+	</div>
+	
+	<!--图文频道-->
+	<div class="tuwen-pd mob-hidden">
+						<h4>图文频道</h4>
+						<ul >
+	 
+						<li>
+							<a href="Article/?23.html" title="辐射4 8K截图">
+							
+							<img src="http://img1.gamersky.com/image2015/11/20151126lnn_8/gamersky_01small_02_2015112617154AF.jpg" alt="辐射4 8K截图" title="辐射4 8K截图" class="img-circle"/>
+								 
+							</a>
+						</li>
+
+	 
+						<li>
+							<a href="Article/?37.html" title="佳能700d+小痰盂新年人像试拍">
+							
+							<img src="upload/Article/2016215163416234.png" alt="佳能700d+小痰盂新年人像试拍" title="佳能700d+小痰盂新年人像试拍" class="img-circle"/>
+								 
+							</a>
+						</li>
+
+	 
+						<li>
+							<a href="Article/?18.html" title="关于li加:hover会抖动的问题">
+							
+							<img src="upload/Article/20151118212959967.jpg" alt="关于li加:hover会抖动的问题" title="关于li加:hover会抖动的问题" class="img-circle"/>
+								 
+							</a>
+						</li>
+
+	 
+						<li>
+							<a href="Article/?29.html" title="这一生，你最重要的事情是让自己幸福">
+							
+							<img src="upload/Article/2016110221135307.jpg" alt="这一生，你最重要的事情是让自己幸福" title="这一生，你最重要的事情是让自己幸福" class="img-circle"/>
+								 
+							</a>
+						</li>
+
+	 
+						<li>
+							<a href="Article/?10.html" title="世界那么大，先过好当下（深度好文）">
+							
+							<img src="upload/Article/20151030235824341.jpg" alt="世界那么大，先过好当下（深度好文）" title="世界那么大，先过好当下（深度好文）" class="img-circle"/>
+								 
+							</a>
+						</li>
+
+	 
+						<li>
+							<a href="Article/?40.html" title="如果想做一件事，先别忙着发朋友圈">
+							
+							<img src="upload/Article/2016220122735603.jpg" alt="如果想做一件事，先别忙着发朋友圈" title="如果想做一件事，先别忙着发朋友圈" class="img-circle"/>
+								 
+							</a>
+						</li>
+
+	 
+						<li>
+							<a href="Article/?21.html" title="西游记之大圣归来精美高清截图">
+							
+							<img src="upload/Article/2015112303450332.jpg" alt="西游记之大圣归来精美高清截图" title="西游记之大圣归来精美高清截图" class="img-circle"/>
+								 
+							</a>
+						</li>
+
+	 
+						<li>
+							<a href="Article/?2.html" title="20多岁的你应该要学会这些东西">
+							
+							<img src="http://www.szwj72.cn/d/file/Article/qcxy/20150211/e7c0e03da9c3c38da039707b6667a142.jpg" alt="20多岁的你应该要学会这些东西" title="20多岁的你应该要学会这些东西" class="img-circle"/>
+								 
+							</a>
+						</li>
+
+	 
+						<li>
+							<a href="Article/?32.html" title="女子从11楼跳下，却看到10楼那对恩爱夫妻在....">
+							
+							<img src="/upload/image/20160116/20160116090188328832.jpg" alt="女子从11楼跳下，却看到10楼那对恩爱夫妻在...." title="女子从11楼跳下，却看到10楼那对恩爱夫妻在...." class="img-circle"/>
+								 
+							</a>
+						</li>
+
+	 
+						<li>
+							<a href="Article/?13.html" title="三十岁前身体换钱，三十岁后钱换身体">
+							
+							<img src="upload/Article/20151179957593.jpg" alt="三十岁前身体换钱，三十岁后钱换身体" title="三十岁前身体换钱，三十岁后钱换身体" class="img-circle"/>
+								 
+							</a>
+						</li>
+
+	 
+						<li>
+							<a href="Article/?43.html" title="救救我的白血病亲人，救救这个家庭，请大家伸出援助之手，帮忙转发">
+							
+							<img src="/upload/image/20160416/20160416231791279127.jpg" alt="救救我的白血病亲人，救救这个家庭，请大家伸出援助之手，帮忙转发" title="救救我的白血病亲人，救救这个家庭，请大家伸出援助之手，帮忙转发" class="img-circle"/>
+								 
+							</a>
+						</li>
+
+	 
+						<li>
+							<a href="Article/?27.html" title="GTA5最新ENB精美截图赏析">
+							
+							<img src="upload/Article/2015121922238555.jpg" alt="GTA5最新ENB精美截图赏析" title="GTA5最新ENB精美截图赏析" class="img-circle"/>
+								 
+							</a>
+						</li>
+
+	    
+						</ul>
+	</div>
+		<!--数据统计-->
+	<div class="data-count ">
+		<h4>数据统计</h4>
+		<ul>
+	
+	 
+			<li><span><i class="el-picture"></i>图片数量：</span><a title="共有 20 张图片">20</a> 张</li>
+			<li><span><i class="el-headphones"></i>说说数量：</span><a title="共有 10 条说说">10</a> 条</li>
+			<li><span><i class="el-pencil"></i>文章数量：</span><a title="共有 41 篇文章">41</a> 篇</li>
+			<li><span><i class="el-comment"></i>留言数量：</span><a title="共有 85 条留言">85</a> 条</li>
+			<li><span><i class="el-comment-alt"></i>评论数量：</span><a title="共有 73 条评论">73</a> 条</li>
+			<li><span><i class="el-paper-clip"></i>素材个数：</span><a title="共有 10 个">10</a> 个</li>
+			<li><span><i class="el-cog"></i>运行天数：</span><a title="晓晓博客 已正常运行 207 天">207</a> 天</li>
+	
+			<li><span><i class="el-adjust-alt"></i>访问统计：</span><a title="累计访问49,051">49,051</a> 次</a></li>
+			<!--<li><span><i class="el-arrow-up"></i></span><a title="晓晓 最后更新了" >更新了<b class="lable"></b></a></li>-->
+
+		</ul>
+	</div>
+
+	</div>
+	<!--底部导航-->
+	<div class="foot-nav">
+		<div class="copy-right"><span >CopyRight &#169; 2015-2016 晓晓博客 &#160;&#160;&#160;     Design by 晓晓</span></div>
+		<div class="bottom-nav">
+			<span><a href="Map/Sitemap.html" target="_blank">百度地图</a>-<a href="Map/Sitemap.xml" target="_blank">谷歌地图</a>-<a><script src="http://s11.cnzz.com/z_stat.php?id=1256669742&web_id=1256669742" language="JavaScript"></script></a>-<a href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action"> 浙ICP备16003960号</a></span>
+		</div>
+	</div>
+<div  id="toTop">Back to Top</div>
+<script>   
+    // 替换
+    document.body.innerHTML = document.body.innerHTML.replace(/\[Q([0-9]*)\]/g, "<img src='images/face/mr/$1.gif'/>");
+    document.body.innerHTML = document.body.innerHTML.replace(/\[yc_([0-9]*)\]/g,"<img src='images/face/yc/$1.gif'/>");
+    document.body.innerHTML = document.body.innerHTML.replace(/\[ali_([0-9]*)\]/g,"<img src='images/face/ali/$1.gif'/>");
+</script>
+
+
+</footer>
+<!---返回顶部-->
+
+<!---END 底部开始-->
+
+
+</body>
+

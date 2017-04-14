@@ -23,7 +23,7 @@
         <!--电脑导航开始-->
         <nav class="mynav">
             <ul class="orange-text">
-                <li class=""><a href="/blog">首页</a></li>
+                <li class=""><a href="{% url "blog:index" %}">首页</a></li>
 
 
                 <li>
@@ -33,7 +33,7 @@
 
 
                 <li>
-                    <a href="/Shuo/">说说</a>
+                    <a href="{% url "blog:article" pk=0 %}">博客</a>
 
                 </li>
 
@@ -44,17 +44,9 @@
 
                     <div class="drop-nav orange-text ">
                         <ul>
-
-                            <li><a href="/List/?1+1.html">生活哲理</a></li>
-
-                            <li><a href="/List/?2+1.html">程序交流</a></li>
-
-                            <li><a href="/List/?3+1.html">关于游戏</a></li>
-
-                            <li><a href="/List/?7+1.html">趣闻杂谈</a></li>
-
-                            <li><a href="/List/?5+1.html">一场旅行</a></li>
-
+                            {% for category in category_list %}
+                                <li><a href="{% url "blog:article" pk=category.pk %}">{{ category.name }}</a></li>
+                            {% endfor %}
                         </ul>
                     </div>
 

@@ -19,4 +19,5 @@ urlpatterns = [
 
     url(r'^index/$', views.Index, name='index'),
     url(r'^about/$', views.About, name='about'),
+    url(r'^article/(?P<pk>\d+)$', views.Articles, name='article'),
 ]

@@ -21,5 +21,6 @@ urlpatterns = [
     url(r'^about/$', views.About, name='about'),
     url(r'^archive/$', views.Archive, name='archive'),
     url(r'^link/$', views.Link, name='link'),
+    url(r'^message/$', views.Message, name='message'),
     url(r'^article/(?P<pk>\d+)$', views.Articles, name='article'),
 ]

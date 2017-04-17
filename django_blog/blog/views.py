@@ -14,7 +14,7 @@ def Index(request):
     article_list = Article.objects.all().order_by('-date_time')
     if len(article_list) > 7:
         article_list = article_list[0:5]
-    return render(request, 'blog/index.html', {"html_title": u"博客首页",
+    return render(request, 'blog/index.html', {"html_title": u"Memory & Write",
                                                "article_list": article_list,
                                                "source_id": "index"})
 

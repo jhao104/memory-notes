@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'^link/$', views.Link, name='link'),
     url(r'^message/$', views.Message, name='message'),
     url(r'^article/(?P<pk>\d+)$', views.Articles, name='article'),
+    url(r'.*?$', views.Index, name='index'),
 ]

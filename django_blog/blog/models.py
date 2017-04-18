@@ -39,9 +39,9 @@ class Article(models.Model):
     def __unicode__(self):
         return self.title
 
-    def GetSourceId(self):
-        source_id = '/blog/article/{id}'.format(id=self.pk)
-        return source_id  # 给网易云跟帖使用
+    def sourceUrl(self):
+        source_url = "http://www.spiderpy.cn" + '/blog/detail/{id}'.format(id=self.pk)
+        return source_url  # 给网易云跟帖使用
 
     def viewed(self):
         """
@@ -75,3 +75,11 @@ class Category(models.Model):
 
     def __unicode__(self):
         return self.name
+
+
+class Comment(models.Model):
+    title = models.CharField(u"标题", max_length=100)
+    source_id = models.CharField(u'文章id或source名称', max_length=25)
+    create_time = models.DateTimeField(u'评论时间')
+    user_name = models.CharField(u'评论用户', max_length=25)
+    comment = models.CharField(u'评论内容', max_length=500)

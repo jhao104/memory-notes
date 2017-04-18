@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 # Create your views here.
 
+import markdown
 from django.shortcuts import render, get_object_or_404
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
 from blog.models import Article, Category
 
 
@@ -51,5 +54,32 @@ def Archive(request):
 def Link(request):
     return render(request, 'blog/link.html', {"html_title": "链接"})
 
+
 def Message(request):
-    return render(request, 'blog/message_board.html', {"html_title": "留言"})
+    return render(request, 'blog/message_board.html', {"html_title": "留言",
+                                                       "source_url": "http://www.spiderpy.cn/blog/message"})
+
+
+@csrf_exempt
+def GetComment(request):
+    """
+    接收网易云跟帖评论消息， post方式回推
+    :param request:
+    :return:
+    """
+    a = request.POST
+    print a
+    return JsonResponse({"status": "ok"})
+
+
+def detail(request, pk):
+    """
+    博文详情
+    :param request:
+    :param pk:
+    :return:
+    """
+    article = get_object_or_404(Article, pk=pk)
+    article.viewed()
+    return render(request, 'blog/detail.html', {"html_title": article.title,
+                                                "article": article})

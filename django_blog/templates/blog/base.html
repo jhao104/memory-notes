@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="/static/css/font-icon.css"/>
     <link rel="stylesheet" href="/static/css/flexslider.css"/>
     <link rel="stylesheet" href="/static/css/face.css"/>
+    {% block css %}{% endblock %}
     <!--JS-->
 
     <script src="/static/js/superbg.min.js"></script>
@@ -39,7 +40,6 @@
     <!--[if lte IE 8]>
 	<script>window.location.href='http://cdn.dmeng.net/upgrade-your-browser.html?referrer='+location.href;</script>
     <![endif]-->
-    {% block css %}{% endblock %}
 
 </head>
 
@@ -87,6 +87,6 @@
 
     });
 </script>
-
+{% block js %}{% endblock %}
 </body>
 </html>

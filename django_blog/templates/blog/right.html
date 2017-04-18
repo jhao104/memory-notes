@@ -184,7 +184,7 @@
             <!--文章排行-->
             <ul class="paihang-ul">
                 {% for article in article_rank %}
-                <li><span></span><a href="#" title="{{article.title}}">{{article.title}}<b><i
+                <li><span></span><a href="{% url "blog:detail" pk=article.id%}" title="{{article.title}}">{{article.title}}<b><i
                         class="el-eye-open"></i>({{article.view}})</b></a></li>
                 {% endfor %}
             </ul>

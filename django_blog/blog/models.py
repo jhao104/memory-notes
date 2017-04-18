@@ -80,6 +80,7 @@ class Category(models.Model):
 class Comment(models.Model):
     title = models.CharField(u"标题", max_length=100)
     source_id = models.CharField(u'文章id或source名称', max_length=25)
-    create_time = models.DateTimeField(u'评论时间')
+    create_time = models.DateTimeField(u'评论时间', auto_now=True)
     user_name = models.CharField(u'评论用户', max_length=25)
+    url = models.CharField(u'链接', max_length=100)
     comment = models.CharField(u'评论内容', max_length=500)

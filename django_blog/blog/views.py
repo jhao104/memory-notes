@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 # Create your views here.
 
-import markdown
+import json
+from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
-from django.http import JsonResponse
-from blog.models import Article, Category
+from blog.models import Article, Category, Comment
 
 
 def Index(request):
@@ -67,8 +67,16 @@ def GetComment(request):
     :param request:
     :return:
     """
-    a = request.POST
-    print a
+    arg = request.POST
+    data = arg.get('data')
+    data = json.loads(data)[0]
+    title = data.get('title')
+    url = data.get('url')
+    source_id = data.get('sourceId')
+    comments = data.get('comments')[0]
+    content = comments.get('content')
+    user = comments.get('user').get('nickname')
+    Comment(title=title, source_id=source_id, user_name=user, url=url, comment=content).save()
     return JsonResponse({"status": "ok"})
 
 

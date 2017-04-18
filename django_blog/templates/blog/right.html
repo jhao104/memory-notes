@@ -187,24 +187,7 @@
                 <li><span></span><a href="#" title="{{article.title}}">{{article.title}}<b><i
                         class="el-eye-open"></i>({{article.view}})</b></a></li>
                 {% endfor %}
-
-                <!--<li><span></span><a href="/Article/?21.html" title="西游记之大圣归来精美高清截图">西游记之大圣归来精美高清截图<b><i-->
-                        <!--class="el-eye-open"></i>(1,764)</b></a></li>-->
-
-                <!--<li><span></span><a href="/Article/?31.html" title="3000工资与8000工资的差距，不仅仅是钱！">3000工资与8000工资的差<b><i-->
-                        <!--class="el-eye-open"></i>(1,664)</b></a></li>-->
-
-                <!--<li><span></span><a href="/Article/?29.html" title="这一生，你最重要的事情是让自己幸福">这一生，你最重要的事情是让自己<b><i-->
-                        <!--class="el-eye-open"></i>(1,650)</b></a></li>-->
-
-                <!--<li><span></span><a href="/Article/?33.html" title="一组很珍贵的解禁照，你绝对没有见过！！">一组很珍贵的解禁照，你绝对没有<b><i-->
-                        <!--class="el-eye-open"></i>(1,617)</b></a></li>-->
-
-                <!--<li><span></span><a href="/Article/?35.html" title="你家的电表转的快吗？快来减速！媒体揭出惊天黑幕！！">你家的电表转的快吗？快来减速！<b><i-->
-                        <!--class="el-eye-open"></i>(1,596)</b></a></li>-->
-
             </ul>
-
 
         </div>
 
@@ -214,35 +197,9 @@
                 <small>Tags Clouds</small>
             </h4>
             <ul id="3dcloud">
-                <li><a href="/Search/?s=爆笑段子 " title="标签：爆笑段子 ">爆笑段子</a></li>
-                <li><a href="/Search/?s=前十名的微信段子 " title="标签：前十名的微信段子 ">前十名的微信段子</a></li>
-                <li><a href="/Search/?s=开放二胎 " title="标签：开放二胎 ">开放二胎</a></li>
-                <li><a href="/Search/?s=王健林 " title="标签：王健林 ">王健林</a></li>
-                <li><a href="/Search/?s=css " title="标签：css ">css</a></li>
-                <li><a href="/Search/?s=工作成长 " title="标签：工作成长 ">工作成长</a></li>
-                <li><a href="/Search/?s=大圣归来 " title="标签：大圣归来 ">大圣归来</a></li>
-                <li><a href="/Search/?s=个人所得税 " title="标签：个人所得税 ">个人所得税</a></li>
-                <li><a href="/Search/?s=辐射4 " title="标签：辐射4 ">辐射4</a></li>
-                <li><a href="/Search/?s=12306 " title="标签：12306 ">12306</a></li>
-                <li><a href="/Search/?s=带过的饭盒 " title="标签：带过的饭盒 ">带过的饭盒</a></li>
-                <li><a href="/Search/?s=那些年上学 " title="标签：那些年上学 ">那些年上学</a></li>
-                <li><a href="/Search/?s=GTA5 " title="标签：GTA5 ">GTA5</a></li>
-                <li><a href="/Search/?s=GTA5真人版 " title="标签：GTA5真人版 ">GTA5真人版</a></li>
-                <li><a href="/Search/?s=稳稳的幸福 " title="标签：稳稳的幸福 ">稳稳的幸福</a></li>
-                <li><a href="/Search/?s=搞笑段子 " title="标签：搞笑段子 ">搞笑段子</a></li>
-                <li><a href="/Search/?s=3000工资 " title="标签：3000工资 ">3000工资</a></li>
-                <li><a href="/Search/?s=90年代的记忆 " title="标签：90年代的记忆 ">90年代的记忆</a></li>
-                <li><a href="/Search/?s=正则表达式 " title="标签：正则表达式 ">正则表达式</a></li>
-                <li><a href="/Search/?s=电表 " title="标签：电表 ">电表</a></li>
-                <li><a href="/Search/?s=breaking街舞 " title="标签：breaking街舞 ">breaking街舞</a></li>
-                <li><a href="/Search/?s=佳能700d " title="标签：佳能700d ">佳能700d</a></li>
-                <li><a href="/Search/?s=朋友圈 " title="标签：朋友圈 ">朋友圈</a></li>
-                <li><a href="/Search/?s=Jquery " title="标签：Jquery ">Jquery</a></li>
-                <li><a href="/Search/?s=白血病 " title="标签：白血病 ">白血病</a></li>
-                <li><a href="/Search/?s=买房 " title="标签：买房 ">买房</a></li>
-                <li><a href="/Search/?s=JS闭包 " title="标签：JS闭包 ">JS闭包</a></li>
-
-
+                {% for tag in tag_list %}
+                    <li><a href="#" title="标签：{{ tag.tag_name }} ">{{ tag.tag_name }}</a></li>
+                {% endfor %}
             </ul>
         </div>
 

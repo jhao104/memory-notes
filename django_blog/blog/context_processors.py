@@ -12,7 +12,7 @@
 """
 __author__ = 'JHao'
 
-from blog.models import Category, Article
+from blog.models import Category, Article, Tag
 
 
 def sidebar(request):
@@ -20,11 +20,17 @@ def sidebar(request):
     # 所有类型
 
     article_rank = Article.objects.all().order_by('-view')
+    # 文章排行
+
+    tag_list = Tag.objects.all()
+    # 标签
+
     if len(article_rank) >= 6:
         article_rank = article_rank[0:6]
     return {
         'category_list': category_list,
-        'article_rank': article_rank
+        'article_rank': article_rank,
+        'tag_list': tag_list
 
     }
 

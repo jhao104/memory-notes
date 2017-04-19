@@ -45,7 +45,7 @@
                     <img src="{{ article.picture }}" alt="{{ article.title }}" title="{{ article.title }}"/>
                 </div>
                 <div class="arc-right">
-                    <h4 class="blue-text"><a href="#" title="{{ article.title }}">{{ article.title }}</a></h4>
+                    <h4 class="blue-text"><a href="{% url "blog:detail" pk=article.id %}" title="{{ article.title }}">{{ article.title }}</a></h4>
                     <p>{{ article.digest }}</p>
                     <ul>
                         <li><a title="{{ article.author }}{{ article.date_time }} 发表 "><i

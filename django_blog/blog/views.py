@@ -45,8 +45,9 @@ def About(request):
     return render(request, 'blog/about.html', {"html_title": "关于"})
 
 
-def Archive(request):
-    return render(request, 'blog/articles.html', {"html_title": "归档"})
+def archive(request):
+    article_list = Article.objects.order_by('-date_time')
+    return render(request, 'blog/archive.html', {"html_title": "归档", "article_list": article_list})
 
 
 def Link(request):
@@ -89,3 +90,16 @@ def detail(request, pk):
     article.viewed()
     return render(request, 'blog/detail.html', {"html_title": article.title,
                                                 "article": article})
+
+
+def search(request, key):
+    """
+    搜索
+    :param request:
+    :param key:
+    :return:
+    """
+    article_list = Article.objects.filter(title__contains=key)
+    return render(request, 'blog/index.html', {"html_title": u"Memory & Write",
+                                               "article_list": article_list,
+                                               "source_id": "index"})

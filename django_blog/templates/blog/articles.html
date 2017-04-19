@@ -1,7 +1,7 @@
 {% extends "blog/base.html" %}
 {% load custom_filter %}
 {% block content %}
-    {% paginate article_list 6 %}
+    {% paginate article_list 8 %}
     {% if article_list %}
     <section class="mysection">
         <h4 class="index-title">
@@ -20,7 +20,7 @@
                              alt="{{ article.title }}" title="{{ article.title }}"/>
                     </div>
                     <div class="arc-right">
-                        <h4 class="blue-text"><a href="/Article/?28.html" title="{{ article.title }}">{{ article.title }}</a></h4>
+                        <h4 class="blue-text"><a href="{% url "blog:detail" pk=article.id %}" title="{{ article.title }}">{{ article.title }}</a></h4>
                         <p>{{ article.digest }}</p>
                         <ul>
                             <li><a title="{{ article.author }} {{ article.date_time }} 发表 "><i class="el-time"></i> {{ article.date_time }}</a></li>

@@ -21,6 +21,11 @@ from django.utils.safestring import mark_safe
 register = template.Library()
 
 
+@register.filter
+def slice_list(value, index):
+    return value[index]
+
+
 @register.filter(is_safe=True)
 @stringfilter
 def custom_markdown(value):

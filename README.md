@@ -8,25 +8,12 @@
 
 * [Python](https://github.com/jhao104/memory-notes/tree/master/Python)
 
-
-
 * [PyCharm](https://github.com/jhao104/memory-notes/tree/master/Pycharm)
-
-
 
 * [Django](https://github.com/jhao104/memory-notes/tree/master/Django)
 
-
-
-* [Pycharm](https://github.com/jhao104/memory-notes/tree/master/Pycharm)
-
-
-
 * [Linux](https://github.com/jhao104/memory-notes/tree/master/Linux)
 
-
 * [SSDB](https://github.com/jhao104/memory-notes/tree/master/SSDB)
-
-
 
 * [ZooKeeper](https://github.com/jhao104/memory-notes/tree/master/ZooKeeper)

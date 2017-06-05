@@ -10,7 +10,7 @@
 
 
 
-* [Pycharm](https://github.com/jhao104/memory-notes/tree/master/Pycharm)
+* [PyCharm](https://github.com/jhao104/memory-notes/tree/master/Pycharm)
 
 
 

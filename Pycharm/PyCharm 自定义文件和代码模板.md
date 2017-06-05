@@ -30,7 +30,7 @@ __author__ = 'JHao'
 ```
 
 　　File Name为文件名， Author是登录系统的用户名, 日期为当前系统日期。是不是感觉比默认的空白文件好多了。具体的修改步骤是: 【文件(File)】 --> 【设置(Settings)】如图操作, 在【编辑器(Editor)】中找到【文件和代码模板(File and Code Templates)】，选择你想要设置的文件类型进行编辑即可。
-    ！[](https://github.com/jhao104/memory-notes/blob/master/Image/2017060501.png)
+    ![example](https://github.com/jhao104/memory-notes/blob/master/Image/2017060501.png)
 　　我的模板是这样的:
 ```python
 # -*- coding: utf-8 -*-

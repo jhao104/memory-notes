@@ -236,9 +236,6 @@ LOG_COLORS = {
 # g_logger.info('123')
 
 
-from datetime import timedelta, date, time, datetime
+import sched, time
 
-d = date.today()
-
-print d
-print d - timedelta(days=5)
+s = sched.scheduler(time.time, time.sleep)

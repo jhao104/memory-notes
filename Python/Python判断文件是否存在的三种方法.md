@@ -117,7 +117,7 @@ except IOError:
 
 使用try语句进行判断，处理所有异常非常简单和优雅的。而且相比其他不需要引入其他外部模块。
 
-3. 使用pathlib模块
+## 3. 使用pathlib模块
 
 pathlib模块在Python3版本中是内建模块，但是在Python2中是需要单独安装三方模块。
 

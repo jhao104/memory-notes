@@ -48,7 +48,7 @@ os.path.isfile("test-data")
 
 语法：
 
-> os.access(<path>, <mode>)
+> os.access(path, mode)
 
 path为文件路径，mode为操作模式，有这么几种:
 

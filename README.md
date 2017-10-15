@@ -45,6 +45,7 @@
      * [Python操作zookeeper—kazoo模块](https://github.com/jhao104/memory-notes/blob/master/ZooKeeper/Python%E6%93%8D%E4%BD%9Czookeeper%E2%80%94kazoo%E6%A8%A1%E5%9D%97.md)
      * [Python正则表达式：最短匹配](https://github.com/jhao104/memory-notes/blob/master/Python/Python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%9A%E6%9C%80%E7%9F%AD%E5%8C%B9%E9%85%8D.md)
      * [类属性的延迟计算](https://github.com/jhao104/memory-notes/blob/master/Python/%E7%B1%BB%E5%B1%9E%E6%80%A7%E7%9A%84%E5%BB%B6%E8%BF%9F%E8%AE%A1%E7%AE%97.md)
+     * [使用captcha模块生成图形验证码](https://github.com/jhao104/memory-notes/blob/master/Python/%E4%BD%BF%E7%94%A8captcha%E6%A8%A1%E5%9D%97%E7%94%9F%E6%88%90%E5%9B%BE%E5%BD%A2%E9%AA%8C%E8%AF%81%E7%A0%81.md)
      * [Python标准库笔记(1) — string模块](https://github.com/jhao104/memory-notes/blob/master/Python/Python%E6%A0%87%E5%87%86%E5%BA%93%E7%AC%94%E8%AE%B0(1)%20%E2%80%94%20string%E6%A8%A1%E5%9D%97.md)
      * [Python标准库笔记(2) — re模块](https://github.com/jhao104/memory-notes/blob/master/Python/Python%E6%A0%87%E5%87%86%E5%BA%93%E7%AC%94%E8%AE%B0(2)%20%E2%80%94%20re%E6%A8%A1%E5%9D%97.md)
      * [Python标准库笔记(3) — datetime模块](https://github.com/jhao104/memory-notes/blob/master/Python/Python%E6%A0%87%E5%87%86%E5%BA%93%E7%AC%94%E8%AE%B0(3)%20%E2%80%94%20datetime%E6%A8%A1%E5%9D%97.md)

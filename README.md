@@ -51,6 +51,7 @@
      * [Python标准库笔记(3) — datetime模块](https://github.com/jhao104/memory-notes/blob/master/Python/Python%E6%A0%87%E5%87%86%E5%BA%93%E7%AC%94%E8%AE%B0(3)%20%E2%80%94%20datetime%E6%A8%A1%E5%9D%97.md)
      * [Python标准库笔记(4) — collections模块](https://github.com/jhao104/memory-notes/blob/master/Python/Python%E6%A0%87%E5%87%86%E5%BA%93%E7%AC%94%E8%AE%B0(4)%20%E2%80%94%20collections%E6%A8%A1%E5%9D%97.md)
      * [Python标准库笔记(5) — sched模块](https://github.com/jhao104/memory-notes/blob/master/Python/Python%E6%A0%87%E5%87%86%E5%BA%93%E7%AC%94%E8%AE%B0(5)%20%E2%80%94%20sched%E6%A8%A1%E5%9D%97.md)
+     * [Python标准库笔记(6) — struct模块](https://github.com/jhao104/memory-notes/blob/master/Python/Python%E6%A0%87%E5%87%86%E5%BA%93%E7%AC%94%E8%AE%B0(6)%20%E2%80%94%20struct%E6%A8%A1%E5%9D%97.md)
 
 * [SSDB](https://github.com/jhao104/memory-notes/tree/master/SSDB)
 

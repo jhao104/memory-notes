@@ -17,3 +17,5 @@
     * [Django 1.10中文文档-第一个应用Part6-静态文件](https://github.com/jhao104/memory-notes/blob/master/Django/Django%201.10%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3-%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%BA%94%E7%94%A8Part6-%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6.md)
     
     * [Django 1.10中文文档-第一个应用Part7-自定义管理站点](https://github.com/jhao104/memory-notes/blob/master/Django/Django%201.10%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3-%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%BA%94%E7%94%A8Part7-%E8%87%AA%E5%AE%9A%E4%B9%89%E7%AE%A1%E7%90%86%E7%AB%99%E7%82%B9.md)
+
+    * [Django 1.10中文文档-更多内容 点击](https://github.com/jhao104/django-chinese-doc)

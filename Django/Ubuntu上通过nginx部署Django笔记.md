@@ -66,6 +66,7 @@ blog为你的项目名。访问http://localhost:8001，项目正常。注意这�
 ## 配置uwsgi
 uwsgi支持通过配置文件的方式启动，可以接受更多的参数，高度可定制。我们在Django项目目录下新建uwsgi.ini
 ```
+[uwsgi]
 # Django-related settings
 
 socket = :8001
@@ -147,6 +148,9 @@ ALLOWED_HOSTS = ['*']
 一切配置好后直接重启nginx即可。更加详细的说明请参见[官方文档](http://uwsgi-docs.readthedocs.io/en/latest/BuildSystem.html)
 
 ## 可能遇到的问题
+
 [如果监听80端口，部署后访问localhost自动跳转到nginx默认的欢迎界面](https://segmentfault.com/q/1010000007047896?_ea=1227923)
+
 [uwsgi: option ‘--http‘ is ambiguous](http://www.mamicode.com/info-detail-1442333.html)
+
 [把settings.py中的DEBUG设置为False前端页面显示不正常了](https://www.v2ex.com/t/184979)

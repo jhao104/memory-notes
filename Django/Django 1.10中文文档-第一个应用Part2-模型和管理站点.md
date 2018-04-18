@@ -94,7 +94,7 @@ Field还可以有各种可选参数;在上例中，我们将votes的默认值设
 
 > 理念: Django应用程序是“即插式”的：您可以在多个项目中使用应用程序，并且您可以分发应用程序，因为他们不必绑定到给定的Django安装。
 
-要在我们的项目中包含应用程序，我们需要在INSTALLED_APPS设置中添加对其配置类的引用。 PollConfig类位于polls/aps.py文件中，因此其虚线路径为“polls.apps.PollsConfig”。编辑mysite/settings.py文件，并将该虚线路径添加到INSTALLED_APPS设置。它看起来像这样:
+要在我们的项目中包含应用程序，我们需要在INSTALLED_APPS设置中添加对其配置类的引用。 PollConfig类位于polls/apps.py文件中，因此其虚线路径为“polls.apps.PollsConfig”。编辑mysite/settings.py文件，并将该虚线路径添加到INSTALLED_APPS设置。它看起来像这样:
 
 ```python
 #  mysite/settings.py

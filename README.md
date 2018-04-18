@@ -24,6 +24,8 @@
     
     * [Django 1.10中文文档-第一个应用Part7-自定义管理站点](https://github.com/jhao104/memory-notes/blob/master/Django/Django%201.10%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3-%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%BA%94%E7%94%A8Part7-%E8%87%AA%E5%AE%9A%E4%B9%89%E7%AE%A1%E7%90%86%E7%AB%99%E7%82%B9.md)
 
+    * [Django 1.10中文文档-更多内容 点击](https://github.com/jhao104/django-chinese-doc)
+
 * [Linux](https://github.com/jhao104/memory-notes/tree/master/Linux)
 
     * [Linux笔记：使用Vim编辑器](https://github.com/jhao104/memory-notes/blob/master/Linux/Linux%E7%AC%94%E8%AE%B0%EF%BC%9A%E4%BD%BF%E7%94%A8Vim%E7%BC%96%E8%BE%91%E5%99%A8.md)
@@ -53,6 +55,7 @@
      * [Python标准库笔记(5) — sched模块](https://github.com/jhao104/memory-notes/blob/master/Python/Python%E6%A0%87%E5%87%86%E5%BA%93%E7%AC%94%E8%AE%B0(5)%20%E2%80%94%20sched%E6%A8%A1%E5%9D%97.md)
      * [Python标准库笔记(6) — struct模块](https://github.com/jhao104/memory-notes/blob/master/Python/Python%E6%A0%87%E5%87%86%E5%BA%93%E7%AC%94%E8%AE%B0(6)%20%E2%80%94%20struct%E6%A8%A1%E5%9D%97.md)
      * [Python标准库笔记(7) — copy模块](https://github.com/jhao104/memory-notes/blob/master/Python/Python%E6%A0%87%E5%87%86%E5%BA%93%E7%AC%94%E8%AE%B0(7)%20%E2%80%94%20copy%E6%A8%A1%E5%9D%97.md)
+     * [Python标准库笔记(8) — pprint模块](https://github.com/jhao104/memory-notes/blob/master/Python/Python%E6%A0%87%E5%87%86%E5%BA%93%E7%AC%94%E8%AE%B0(8)%20%E2%80%94%20pprint%E6%A8%A1%E5%9D%97.md)
 
 * [SSDB](https://github.com/jhao104/memory-notes/tree/master/SSDB)
 

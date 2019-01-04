@@ -636,7 +636,7 @@ document.addEventListener("DOMContentLoaded", (evt) => {
 
 该应用程序将定时(间隔2秒)更新显示行星的方位和高度信息。`Web Geolocation API` 会默认读取用户当前地理位置，也可以自己手动输入地理坐标置。如果用户停止输入半秒以上时间，就会开始自动更新行星位置数据。
 
-![](index_files/1.png)
+![](http://qiniu.spiderpy.cn/19-1-4/1202956.jpg)
 
 虽然这不是JavaScript教程，但是这里可以简单讲解下JS脚本的部分内容:
 

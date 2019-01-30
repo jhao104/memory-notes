@@ -19,7 +19,7 @@
 
 经过测试`8邻域降噪` 对于小的噪点的去除是很有效的，而且计算量不大，下图是阈值设置为4去噪后的结果：
 
-![](http://qiniu.spiderpy.cn/19-1-29/1.jpg)
+![](http://qiniu.spiderpy.cn/19-1-29/2.jpg)
 
 ### Pillow实现
 

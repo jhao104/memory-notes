@@ -62,6 +62,7 @@
      * [Python标准库笔记(9) — functools模块](https://github.com/jhao104/memory-notes/blob/master/Python/Python%E6%A0%87%E5%87%86%E5%BA%93%E7%AC%94%E8%AE%B0(9)%20%E2%80%94%20functools%E6%A8%A1%E5%9D%97.md)
      * [Python标准库笔记(10) — itertools模块](https://github.com/jhao104/memory-notes/blob/master/Python/Python%E6%A0%87%E5%87%86%E5%BA%93%E7%AC%94%E8%AE%B0(10)%20%E2%80%94%20itertools%E6%A8%A1%E5%9D%97.md)
      * [Python标准库笔记(11) — operator模块](https://github.com/jhao104/memory-notes/blob/master/Python/Python%E6%A0%87%E5%87%86%E5%BA%93%E7%AC%94%E8%AE%B0(11)%20%E2%80%94%20operator%E6%A8%A1%E5%9D%97.md)
+     * [Docker容器化部署Python应用](https://github.com/jhao104/memory-notes/blob/master/Python/Docker%E5%AE%B9%E5%99%A8%E5%8C%96%E9%83%A8%E7%BD%B2Python%E5%BA%94%E7%94%A8.md)
 
 * [SSDB](https://github.com/jhao104/memory-notes/tree/master/SSDB)
 

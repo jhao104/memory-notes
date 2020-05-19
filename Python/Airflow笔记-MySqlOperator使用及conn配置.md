@@ -48,7 +48,7 @@ task = MySqlOperator(
 
 ### 4. `conn`配置
 
-![](index_files/_7B3DEB9FB4-8B39-E0B6-6329-35711BA04258_7D.jpg)
+![](http://qiniu.spiderpy.cn/20-7-7/175323.jpg)
 
 建议`conn`配置通过web界面来配置，这样不用硬编码到代码中，关于配置中的各个参数:
 
